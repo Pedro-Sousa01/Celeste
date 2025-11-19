@@ -25,8 +25,8 @@
 
 # 📦 Entregáveis
 
- - [ ] Documentação do projeto
- - [ ] Planejamento no trello
+ - [X] Documentação do projeto
+ - [X] Planejamento no trello
  - [ ] Modelo Lógico
  - [ ] Relacionamentos
  - [ ] Comandos SQL
