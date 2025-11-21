@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Renogare', Arial, Helvetica, sans-serif;
   margin: 0px;
@@ -25,6 +29,8 @@ body {
   width: 100%;
   height: 10%;
   color: white;
+  backdrop-filter: blur(4px);
+  background: rgba(20, 0, 30, 0.4);
 }
 
 .containerHeader {
@@ -56,21 +62,40 @@ body {
 }
 
 .banner {
-  height: 700px;
+  height: 830px;
   background-size: cover;
-  background-position: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/imgs/banner.gif);
+  background-position: left;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../assets/imgs/banner.gif);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  border-bottom: 5px solid #bca4d4;
+  border-bottom: 15px solid #bca4d4;
+  background-repeat: round;
+  flex-direction: column;
+}
+
+.banner button {
+  justify-self: flex-end;
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(#311E2F, #393638);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.banner button a {
+  text-decoration: none;
+  color: white;
 }
 
 .containerMain {
-  width: 100%;
+  width: auto;
   height: 1000px;
   margin: auto;
+  justify-content: center;
+  display: flex;
   background: linear-gradient(#311E2F, #393638);
 }
 
@@ -78,7 +103,7 @@ body {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 55px;
+  font-size: 50px;
 }
 
 .footer {
@@ -108,5 +133,68 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+}
 
+.boxes {
+  margin-top: auto;
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fontChapters {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(#393638, #311E2F);
+  border-radius: 12px;
+  width: 70%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.titleBox {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.textBox {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: justify;
+  justify-content: justify;
+  margin-left: 30px;
+  margin-top: 20px;
+  color: white;
+}
+
+.imgBox {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+
+}
+
+.imgBox img {
+  border: 2px solid white;
+  border-radius: 12px;
 }
