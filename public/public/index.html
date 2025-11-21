@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Celeste | Mountain</title>
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="stylesheet" href="./css/estilo.css" />
   <link rel="icon" href="./assets/icon/favicon2.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
   <div class="header">
     <div class="containerHeader">
-      <img alt="Morango" src="./assets/imgs/navbar.gif" width="150px">
+      <img alt="Morango" src="./assets/imgs/navbar.gif" width="150px" />
       <ul class="navbar">
         <li class="agora">
           <a href="#">Mountain</a>
@@ -44,42 +44,47 @@
   <!--Banner-->
 
   <div class="banner">
-    <span class="bannerTitle">Celeste</span> <br> <br>
-    <button class="bannerTitle" style="font-size: 16px;" onclick="saibaMais()"><a href="#destino">Saiba
-        Mais</a></button>
+    <span class="bannerTitle">Celeste</span> <br />
+    <br />
+    <button class="bannerTitle" style="font-size: 16px" onclick="saibaMais()">
+      <a href="#destino">Saiba Mais</a>
+    </button>
   </div>
   <!--Main Page-->
-  <div class="containerMain" id="destino">
-    <div class="boxes"> <br>
-      <span class="bannerTitle" style="color: white; font-size: 40px; margin-bottom: 50px;">E a escalada
-        começa...</span>
-      <div class="box"> <br>
+  <div class="containerMain">
+    <div class="boxes">
+      <br />
+      <span class="bannerTitle" id="destino" style="
+            color: white;
+            font-size: 40px;
+            margin-bottom: 50px;
+            padding-top: 50px;
+          ">E a escalada começa...</span>
+      <div class="box">
+        <br />
+        <img width="70px" style="margin-left: 20px" height="60px" onclick="carroselVoltar()"
+          src="./assets/imgs/seta-esquerda.png" />
         <div class="titleBox">
-          <span class="fontChapters">Epílogo</span>
+          <span id="titulo" class="fontChapters">Epílogo</span>
+
           <div class="textBox">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ad labore unde accusamus, atque
-              debitis ipsum aliquid quia assumenda aut voluptates provident reiciendis odit tempore dolores blanditiis
-              est facere qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis atque ducimus harum,
-              similique eos praesentium. Corrupti eaque magni veniam quod? In aspernatur exercitationem inventore aut
-              sed quod magnam. Dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ad labore unde
-              accusamus, atque
-              debitis ipsum aliquid quia assumenda aut voluptates provident reiciendis odit tempore dolores blanditiis
-              est facere qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis atque ducimus harum,
-              similique eos praesentium. Corrupti eaque magni veniam quod? In aspernatur exercitationem inventore aut
-              sed quod magnam. Dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ad labore unde
-              accusamus, atque
-              debitis ipsum aliquid quia assumenda aut voluptates provident reiciendis odit tempore dolores blanditiis
-              est facere qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis atque ducimus harum,
-              similique eos praesentium. Corrupti eaque magni veniam quod? In aspernatur exercitationem inventore aut
-              sed quod magnam. Dolor?</p>
+            <p id="conteudoCarrosel">a</p>
           </div>
         </div>
 
         <div class="imgBox">
-          <img width="600px" alt="Imagem do Epilogo de Celeste" src="./assets/imgs/chapters/epilogue.png">
+          <img class="img_Carrosel" id="imagemCarrosel" alt="Imagem do Capítulo Atual de Celeste"
+            src="./assets/imgs/chapters/epilogue.png" />
         </div>
+        <img width="70px" height="60px" onclick="carroselIr()" src="./assets/imgs/seta-direita.png" />
       </div>
-
+          <span class="bannerTitle" style="
+            color: white;
+            font-size: 30px;
+            margin-bottom: 50px;
+            padding-top: 30px;
+          ">Por que Celeste?</span </div>
+          <div class="box"></div>
     </div>
   </div>
   <!--Fim Man Page-->
@@ -88,22 +93,116 @@
   <div class="footer">
     <div class="containerFooter">
       <div class="imgBox">
-        <img width="150px" style="border: none;" alt="Morango" src="./assets/imgs/footer.gif">
+        <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
       </div>
       <div class="footerText">
-        <span class="bannerTitle" style="font-size:20px;">Escale sua Montanha</span>
-        <p>Esse é um projeto sem fins lucrativos para aprendizado pessoal e divulgação, portanto as músicas,
-          imagens e
-          vídeos utilizados no site são de terceiros e estão sujeitos a remoções.</p>
+        <span class="bannerTitle" style="font-size: 20px">Escale sua Montanha</span>
+        <p>
+          Esse é um projeto sem fins lucrativos para aprendizado pessoal e
+          divulgação, portanto as músicas, imagens e vídeos utilizados no site
+          são de terceiros e estão sujeitos a remoções.
+        </p>
         <span>Feito com ♡ por Pedro Sousa</span>
       </div>
       <div class="imgBox">
-        <img width="150px" style="border: none;" alt="Morango" src="./assets/imgs/footer.gif">
+        <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
       </div>
     </div>
-  </div>
-  <!--Fim Footer-->
-
+    <!--Fim Footer-->
 </body>
 
 </html>
+
+<script>
+  var contador = 0;
+
+  var tituloInit = ["Epílogo"];
+
+  var TituloCarrosel = [
+    "Cidade Abandonada",
+    "Sítio Antigo",
+    "Resort Celestial",
+    "Golden Ridge",
+    "Templo do Espelho",
+    "Reflexão",
+    "O Topo",
+    "Núcleo",
+    "Adeus",
+  ];
+
+  var TextoInit = ["a"];
+
+  var TextoCarrosel = [`a`, "a", "a", "a", "a", "a", "a", "a", "a"];
+
+  var imagemInit = ["./assets/imgs/chapters/epilogue.png"];
+
+  var ImagemCarrosel = [
+    "./assets/imgs/chapters/Chapter1.png",
+    "./assets/imgs/chapters/Chapter2.png",
+    "./assets/imgs/chapters/Chapter3.png",
+    "./assets/imgs/chapters/Chapter4.png",
+    "./assets/imgs/chapters/Chapter5.png",
+    "./assets/imgs/chapters/Chapter6.png",
+    "./assets/imgs/chapters/Chapter7.png",
+    "./assets/imgs/chapters/Chapter8.png",
+    "./assets/imgs/chapters/Chapter9.png",
+  ];
+
+  function carroselVoltar() {
+    var conteudo = document.getElementById(`conteudoCarrosel`);
+    var imagem = document.getElementById(`imagemCarrosel`);
+    var titulo = document.getElementById(`titulo`);
+
+    var checar = (contador - 1 == 0)
+
+
+    for (var index = 0; index < 1; index++) {
+
+      if (contador == 0) {
+        contador = 8;
+      } else {
+        contador--;
+      }
+
+      var atualTexto = TextoCarrosel[contador];
+      var atualImagem = ImagemCarrosel[contador];
+      var atualTitulo = TituloCarrosel[contador];
+
+      conteudo.innerHTML = atualTexto;
+      imagem.src = atualImagem;
+      titulo.innerHTML = atualTitulo;
+    }
+
+    if (checar) {
+      conteudo.innerHTML = TextoInit[0];
+      imagem.src = imagemInit[0];
+      titulo.innerHTML = tituloInit[0];
+    }
+  }
+
+  function carroselIr() {
+    var conteudo = document.getElementById(`conteudoCarrosel`);
+    var imagem = document.getElementById(`imagemCarrosel`);
+    var titulo = document.getElementById(`titulo`);
+
+    for (var index = 0; index < 1; index++) {
+      var atualTexto = TextoCarrosel[contador];
+      var atualImagem = ImagemCarrosel[contador];
+      var atualTitulo = TituloCarrosel[contador];
+
+      conteudo.innerHTML = atualTexto;
+      imagem.src = atualImagem;
+      titulo.innerHTML = atualTitulo;
+
+      contador++;
+    }
+
+    if (contador == 10) {
+      contador = 0;
+
+      conteudo.innerHTML = TextoInit[0];
+      imagem.src = imagemInit[0];
+      titulo.innerHTML = tituloInit[0];
+    }
+  }
+</script>
