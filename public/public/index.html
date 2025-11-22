@@ -42,73 +42,98 @@
   <!--Fim Header-->
 
   <!--Banner-->
-
   <div class="banner">
-    <span class="bannerTitle">Celeste</span> <br />
-    <br />
-    <button class="bannerTitle" style="font-size: 16px" onclick="saibaMais()">
+    <span class="bannerTitle">Celeste</span>
+    <button style="font-size: 16px" onclick="saibaMais()">
       <a href="#destino">Saiba Mais</a>
     </button>
   </div>
+
   <!--Main Page-->
   <div class="containerMain">
+
+
+
     <div class="boxes">
-      <br />
-      <span class="bannerTitle" id="destino" style="
-            color: white;
-            font-size: 40px;
-            margin-bottom: 50px;
-            padding-top: 50px;
-          ">E a escalada começa...</span>
+      <span class="tituloBoxes" style="font-size: 40px;" id="destino">E a escalada começa...</span>
       <div class="box">
-        <br />
         <img width="70px" style="margin-left: 20px" height="60px" onclick="carroselVoltar()"
           src="./assets/imgs/seta-esquerda.png" />
         <div class="titleBox">
-          <span id="titulo" class="fontChapters">Epílogo</span>
-
+          <span id="titulo" class="fontChapters">Introdução</span>
           <div class="textBox">
             <p id="conteudoCarrosel">a</p>
           </div>
         </div>
-
         <div class="imgBox">
           <img class="img_Carrosel" id="imagemCarrosel" alt="Imagem do Capítulo Atual de Celeste"
-            src="./assets/imgs/chapters/epilogue.png" />
+            src="./assets/imgs/chapters/epilogue.gif" />
         </div>
         <img width="70px" height="60px" onclick="carroselIr()" src="./assets/imgs/seta-direita.png" />
       </div>
-          <span class="bannerTitle" style="
-            color: white;
-            font-size: 30px;
-            margin-bottom: 50px;
-            padding-top: 30px;
-          ">Por que Celeste?</span </div>
-          <div class="box"></div>
-    </div>
-  </div>
-  <!--Fim Man Page-->
 
-  <!--Footer-->
-  <div class="footer">
-    <div class="containerFooter">
-      <div class="imgBox">
-        <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
+      <span class="tituloBoxes">O que torna Celeste especial?</span </div>
+      <div class=" box">
+        <div class="textBox">
+          <p></p>
+        </div>
+        <div class="imgBox">
+          <img class="img_Carrosel" alt="Madeline e Theo Descansando" src="./assets/imgs/chapters/text.gif" />
+        </div>
       </div>
-      <div class="footerText">
-        <span class="bannerTitle" style="font-size: 20px">Escale sua Montanha</span>
-        <p>
-          Esse é um projeto sem fins lucrativos para aprendizado pessoal e
-          divulgação, portanto as músicas, imagens e vídeos utilizados no site
-          são de terceiros e estão sujeitos a remoções.
-        </p>
-        <span>Feito com ♡ por Pedro Sousa</span>
+
+      <span class="tituloBoxes">O que é esse projeto?</span </div>
+      <div class=" box">
+        <div class="imgBox" style="margin-left: 50px;">
+          <img class="img_Carrosel" alt="Madeline e Badline se entendendo" src="./assets/imgs/chapters/text1.gif" />
+        </div>
+        <div class="textBox">
+          <p>a</p>
+        </div>
       </div>
-      <div class="imgBox">
-        <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
+      <span class="tituloBoxes">Personagens</span </div>
+      <div class=" boxPerso">
+        <div class="caixaBonecos" onclick="madeline()" id="madeline"></div>
+        <div class="caixaBonecos" onclick="badeline()" id="badeline"></div>
+        <div class="caixaBonecos" onclick="theo()" id="theo"></div>
+        <div class="caixaBonecos" onclick="granny()" id="oldWoman"></div>
+        <div class="caixaBonecos" onclick="oshiro()" id="oshiro"></div>
       </div>
-    </div>
-    <!--Fim Footer-->
+      <!--Modal -->
+      <!-- Modal -->
+      <div id="modal" class="modalBox" style="display: none">
+        <div class="conteudoModal">
+          <img id="personagemModal" class="iconePersonagem" src="./assets/imgs/personagens/modalBox/madeline.gif"
+            alt="Personagem">
+          <p id="textoModal" class="textoDialogo">
+          </p>
+        </div>
+      </div>
+
+      <!--Fim Man Page-->
+
+
+
+      <!--Footer-->
+      <div class="footer">
+        <div class="containerFooter">
+          <div class="imgBox">
+            <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
+          </div>
+          <div class="footerText">
+            <span class="bannerTitle" style="font-size: 20px">Escale sua Montanha</span>
+            <p>
+              Esse é um projeto sem fins lucrativos para aprendizado pessoal e
+              divulgação, portanto as músicas, imagens e vídeos utilizados no site
+              são de terceiros e estão sujeitos a remoções.
+            </p>
+            <span style="margin-bottom: 10px;">Feito com ♡ por Pedro Sousa</span>
+          </div>
+          <div class="imgBox">
+            <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
+          </div>
+        </div>
+        <!--Fim Footer-->
 </body>
 
 </html>
@@ -116,7 +141,7 @@
 <script>
   var contador = 0;
 
-  var tituloInit = ["Epílogo"];
+  var tituloInit = ["Introdução"];
 
   var TituloCarrosel = [
     "Cidade Abandonada",
@@ -134,11 +159,11 @@
 
   var TextoCarrosel = [`a`, "a", "a", "a", "a", "a", "a", "a", "a"];
 
-  var imagemInit = ["./assets/imgs/chapters/epilogue.png"];
+  var imagemInit = ["./assets/imgs/chapters/epilogue.gif"];
 
   var ImagemCarrosel = [
     "./assets/imgs/chapters/Chapter1.png",
-    "./assets/imgs/chapters/Chapter2.png",
+    "./assets/imgs/chapters/Chapter2.gif",
     "./assets/imgs/chapters/Chapter3.png",
     "./assets/imgs/chapters/Chapter4.png",
     "./assets/imgs/chapters/Chapter5.png",
@@ -205,4 +230,70 @@
       titulo.innerHTML = tituloInit[0];
     }
   }
+
+  function madeline() {
+    var madeline = document.getElementById('madeline');
+    var modal = document.getElementById(`modal`);
+    var texto = document.getElementById(`textoModal`);
+    var imagem = document.getElementById(`personagemModal`);
+
+    personagemModal.src = "./assets/imgs/personagens/modalBox/madeline.gif";
+    modal.className = 'modalBox';
+    modal.classList.add(`madelineFundo`);
+    texto.innerHTML = `AAAAAAAA!!`
+    modal.style.display = "block"
+  }
+
+  function badeline() {
+    var badeline = document.getElementById('badeline');
+    var modal = document.getElementById(`modal`);
+    var texto = document.getElementById(`textoModal`);
+    var imagem = document.getElementById(`personagemModal`);
+
+    personagemModal.src = "./assets/imgs/personagens/modalBox/badeline.gif";
+    modal.className = 'modalBox';
+    modal.classList.add(`badelineFundo`);
+    texto.innerHTML = `NÃO!!!`;
+    modal.style.display = "block";
+  }
+
+  function theo() {
+    var theo = document.getElementById('theo');
+    var modal = document.getElementById(`modal`);
+    var texto = document.getElementById(`textoModal`);
+    var imagem = document.getElementById(`personagemModal`);
+
+    personagemModal.src = "./assets/imgs/personagens/modalBox/theo.gif";
+    modal.className = 'modalBox';
+    modal.classList.add(`theoFundo`);
+    texto.innerHTML = `AAAAAAAAAAAA!!!`;
+    modal.style.display = "block";
+  }
+
+  function granny() {
+    var granny = document.getElementById('granny');
+    var modal = document.getElementById(`modal`);
+    var texto = document.getElementById(`textoModal`);
+    var imagem = document.getElementById(`personagemModal`);
+
+    personagemModal.src = "./assets/imgs/personagens/modalBox/granny.png";
+    modal.className = 'modalBox';
+    modal.classList.add(`grannyFundo`);
+    texto.innerHTML = `HAHAHAHHAHAHAHAHAH!!!`;
+    modal.style.display = "block";
+  }
+
+  function oshiro() {
+    var oshiro = document.getElementById('oshiro');
+    var modal = document.getElementById(`modal`);
+    var texto = document.getElementById(`textoModal`);
+    var imagem = document.getElementById(`personagemModal`);
+
+    personagemModal.src = "./assets/imgs/personagens/modalBox/oshiro.gif";
+    modal.className = 'modalBox';
+    modal.classList.add(`oshiroFundo`);
+    texto.innerHTML = `HAHAHAHHAHAHAHAHAH!!!`;
+    modal.style.display = "block";
+  }
+
 </script>
