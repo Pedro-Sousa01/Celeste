@@ -67,8 +67,8 @@
                         <br>
                     </div>
 
-                    <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/aguarde-pink2.gif" style="display: none;" id="loading-gif">
+                    <div id="div_aguardar" class="loading-div" style="display: none;">
+                        <img src="./assets/aguarde-pink2.gif" id="loading-gif" width="75px;" height="75px;">
                     </div>
 
                     <div class="bannerTitle" style="font-size: 12px; margin-bottom: 20px; margin-top: 0px;"
@@ -149,10 +149,9 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
