@@ -36,9 +36,35 @@
 
 # ⚙️ Como instalar
 
-1. **Clone o repositório**
-   ```bash
-   git clone https://github.com/Pedro-Sousa01/Celeste.git
+<ol>
+  <li><strong>Abra o Terminal (com Git Bash instalado)</strong></li> <br>
+
+  <li>
+    <strong>Clone o repositório</strong>
+    <br>
+
+```bash
+git clone https://github.com/Pedro-Sousa01/Celeste.git
+cd Celeste/public
+```
+
+</li> <li> <strong>Configure o arquivo <code>.env.dev</code></strong> <br> 
+	Abra o arquivo e crie o usuário correspondente. <br> <br>
+</li> <li> <strong>Crie as tabelas do banco de dados</strong> <br>
+	
+```bash
+cd src/database
+```
+
+Agora abra o arquivo <code>script.sql</code> e crie as tabelas necessárias.
+</li> <li> <strong>Rode a API</strong> <br>
+	
+```bash
+npm start
+```
+
+</li> <li> <strong>Acesse o site pelo endereço localhost exibido no terminal e aproveite!</strong> </li> </ol>
+
 
 # 🚀 Tecnologias utilizadas
 <b> Front-end <br>
