@@ -32,7 +32,7 @@
  - [ ] Comandos SQL
  - [X] Algoritmos: Variáveis, Funções, Operações Matemáticas, Condicionais, Repetições, Vetores
  - [X] Utilização de uma VM Linux contendo somente o BD
- - [] Dashboard e Indicadores com gráficos
+ - [ ] Dashboard e Indicadores com gráficos
 
 # ⚙️ Como instalar
 
