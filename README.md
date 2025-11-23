@@ -27,13 +27,12 @@
 
  - [X] Documentação do projeto
  - [X] Planejamento no trello
- - [ ] Modelo Lógico
- - [ ] Relacionamentos
+ - [X] Modelo Lógico
+ - [X] Relacionamentos
  - [ ] Comandos SQL
- - [ ] Algoritmos: Variáveis, Funções, Operações Matemáticas, Condicionais, Repetições, Vetores
- - [ ] Aplicação de Cálculos matemáticos
- - [ ] Utilização de uma VM Linux contendo somente o BD
- - [ ] Dashboard e Indicadores com gráficos
+ - [X] Algoritmos: Variáveis, Funções, Operações Matemáticas, Condicionais, Repetições, Vetores
+ - [X] Utilização de uma VM Linux contendo somente o BD
+ - [] Dashboard e Indicadores com gráficos
 
 # ⚙️ Como instalar
 
