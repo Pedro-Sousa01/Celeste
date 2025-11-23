@@ -42,7 +42,7 @@
 
     <main>
         <div class="login">
-            <div class="alerta_erro">
+            <div class="alerta_erro" style="margin-bottom: 30px;">
                 <div class="card_erro" id="cardErro">
                     <span id="mensagem_erro"></span>
                 </div>
@@ -68,10 +68,11 @@
                     </div>
 
                     <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/circle-loading.gif" style="display: none;" id="loading-gif">
+                        <img src="./assets/aguarde-pink2.gif" style="display: none;" id="loading-gif">
                     </div>
 
-                    <div id="div_erros_login"></div>
+                    <div class="bannerTitle" style="font-size: 12px; margin-bottom: 20px; margin-top: 0px;"
+                        id="div_erros_login"></div>
                 </div>
             </div>
         </div>
@@ -106,6 +107,8 @@
 
 
     function entrar() {
+
+
         aguardar();
 
         var emailVar = email_input.value;
@@ -113,8 +116,9 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = `Algum campo está em branco, por favor inserir valor válido.`;
             finalizarAguardar();
+            setInterval(sumirMensagem, 5000);
             return false;
         }
         else {
@@ -160,11 +164,13 @@
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
+                    setInterval(sumirMensagem, 5000);
                 });
             }
 
         }).catch(function (erro) {
             console.log(erro);
+            div.aguardar.style.display = "block";
         })
 
         return false;

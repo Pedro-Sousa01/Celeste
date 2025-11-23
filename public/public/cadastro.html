@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <script src="./js/sessao.js"></script>
 </head>
 
 <body>
@@ -31,48 +32,52 @@
     </div>
   </div>
 
+
   <main>
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro" style="display: none;">
+    <div class="alerta_erro" id="alerta_erroCard">
+      <div class="card_erro" style="width: 350px; height: 50px; margin-bottom: 25px;" id="cardErro">
         <span id="mensagem_erro"></span>
       </div>
     </div>
-    <div class="container">
-      <div class="modal">
-        <div class="bannerTitle" style="font-size: 35px; color: #28123C;">
-          Cadastro
-        </div>
-        <div class="inputs">
-          <div class="cima">
-            <div class="um">
-              <p class="paragrafo">Nome: </p>
-              <input type="text" placeholder="Madeline" id="nome_input">
-              <p class="paragrafo"">Email: </p>
+    <div class="login">
+      <div class="container" style="width: 1500px;">
+        <div class="modal">
+          <div class="bannerTitle" style="font-size: 35px; color: #28123C;">
+            Cadastro
+          </div>
+          <div class="inputs">
+            <div class="cima">
+              <div class="um">
+                <p class="paragrafo">Nome: </p>
+                <input type="text" placeholder="Madeline" id="nome_input">
+                <p class="paragrafo"">Email: </p>
               <input type=" text" placeholder="email@email.com" id="email_input">
-            </div>
-            <div class="dois">
-              <p class="paragrafo"">Senha:</p>
+              </div>
+              <div class="dois">
+                <p class="paragrafo"">Senha:</p>
               <input type=" text" placeholder="**********" id="senha_input">
-              <p class="paragrafo"">Confirme sua senha:</p>
+                <p class="paragrafo"">Confirme sua senha:</p>
               <input type=" text" placeholder="**********" id="confirmacao_senha_input">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="botao">
-          <button class="bannerTitle" style="font-size: 15px; height: 60px;" onclick="cadastrar()">Cadastre-se</button>
-        </div>
-        <div class="msg">
-          <p>Ja tem cadastro? faça <a style="color: #28123C; font-size: 12px;" href="login.html"
-              class="bannerTitle">LOGIN</a></p>
-        </div>
-        <div id="div_aguardar" class="loading-div" style="display: none; margin: 10px 0px;">
-          <img width="50px" height="50px" src="./assets/icon/aguarde-orange.gif" id="loading-gif" />
-        </div>
+          <div class="botao">
+            <button class="bannerTitle" style="font-size: 15px; height: 60px;"
+              onclick="cadastrar()">Cadastre-se</button>
+          </div>
+          <div id="div_aguardar" class="loading-div" style="display: none; margin: 10px 0px;">
+            <img width="50px" height="50px" src="./assets/aguarde-pink.gif" id="loading-gif" />
+          </div>
+          <div class="msg">
+            <p>Ja tem cadastro? faça <a style="color: #28123C; font-size: 12px;" href="login.html"
+                class="bannerTitle">LOGIN</a></p>
+          </div>
 
+
+        </div>
       </div>
-
       <div id="div_erros_login"></div>
-    </div>
+
   </main>
   <div class="footer">
     <div class="containerFooter">
@@ -92,6 +97,7 @@
         <img width="150px" style="border: none" alt="Morango" src="./assets/imgs/footer.gif" />
       </div>
     </div>
+  </div>
 </body>
 
 </html>
@@ -103,7 +109,7 @@
 
   function cadastrar() {
 
-    // aguardar();
+    aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -128,9 +134,9 @@
         confirmacaoSenhaVar == ""
       ) {
         cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `(Mensagem de erro para todos os campos em branco) `;
-
+        mensagem_erro.innerHTML = `Algum campo está em branco, por favor inserir valor válido.`;
         finalizarAguardar();
+        setInterval(sumirMensagem, 5000);
         return false;
       } else {
         setInterval(sumirMensagem, 5000);
@@ -155,23 +161,26 @@
 
         if (resposta.ok) {
           cardErro.style.display = "block";
-          div_aguardar.style.display = 'flex';
+
           mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            "Cadastro realizado com sucesso! <br> Redirecionando para tela de Login...";
 
           setTimeout(() => {
+
             window.location = "login.html";
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
+
+          setInterval(sumirMensagem, 5000);
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+        div_aguardar.style.display = 'block';
+        setInterval(sumirMensagem, 5000);
       });
 
     return false;

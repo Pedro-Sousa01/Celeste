@@ -172,3 +172,36 @@ input {
   margin-bottom: 0px;
   margin-right: 10px;
 }
+
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: auto;
+}
+.card_erro {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.529);
+  color: #28123c;
+  width: 300px;
+  height: 50px;
+  position: fixed;
+  border-radius: 4px;
+  padding: 10px;
+  margin-right: 10%;
+  border-radius: 12px;
+  position: absolute;
+}
+
+#alerta_erroCard {
+  margin-bottom: 500px;
+}
+
+#cardErro {
+  margin-left: 575px;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}
