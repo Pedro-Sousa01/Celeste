@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Renogare";
+  src: url("fonts/Renogare-Regular.woff2") format("woff2"),
+    url("fonts/Renogare-Regular.woff") format("woff"),
+    url("fonts/Renogare-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Renogare", Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  color: white;
+  backdrop-filter: blur(4px);
+  background: rgba(20, 0, 30, 0.4);
+}
+
+.containerHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+.agora {
+  font-weight: bolder;
+}
+
+main {
+  background-image: url(../assets/imgs/backgroundRegister.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: initial;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .container .modal {
+  background-color: rgba(255, 255, 255, 0.529);
+  min-width: 40%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+main .container .modal input {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+main .container .modal .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+main .container .modal .inputs .cima {
+  display: flex;
+}
+
+main .container .modal .inputs .cima p {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+main .container .modal .inputs .cima .um,
+.dois {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+main .container .modal .botao {
+  margin-top: 5%;
+}
+
+.botao button:hover {
+  border: 3px solid #fff;
+  transform: scale(1.1);
+}
+
+main .container .modal .botao button {
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(#311e2f, #393638);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+main .container .modal .botao button:hover {
+  background-color: #d40b0094;
+}
+
+main .container .modal .msg {
+  margin-top: 5px;
+}
+
+main .container .modal .msg a {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  main .container .modal {
+    width: 90%;
+    height: auto;
+    padding: 20px 0px;
+  }
+
+  main .container .modal .inputs .cima .um,
+  .dois {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input {
+  text-align: center;
+}
+
+.paragrafo {
+  color: #28123c;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}

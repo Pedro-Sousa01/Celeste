@@ -136,7 +136,7 @@ body {
 .footer {
   border-top: 5px #bca4d4 solid;
   width: 100%;
-  height: auto;
+  height: 10%;
   color: white;
   background-color: #101013;
 }
@@ -147,10 +147,6 @@ body {
   align-items: center;
   width: 100%;
   flex-direction: row;
-}
-
-.imgBox {
-  width: 10%;
 }
 
 .footerText {
@@ -178,8 +174,11 @@ body {
 }
 
 .img_Carrosel {
-  width: 700px;
-  height: 400px;
+  width: 600px;
+}
+
+.img_text {
+  width: 600px;
 }
 
 .fontChapters {
@@ -197,7 +196,18 @@ body {
   background: linear-gradient(#393638, #311e2f);
   border-radius: 12px;
   width: 80%;
-  height: 500px;
+  height: 750px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.box2 {
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(#393638, #311e2f);
+  border-radius: 12px;
+  width: 70%;
+  height: 400px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -211,28 +221,52 @@ body {
 }
 
 .textBox {
+  top: 0;
   width: 85%;
   height: 100%;
   display: flex;
-  align-items: justify;
-  justify-content: justify;
-  margin-left: 30px;
-  margin-top: 20px;
+  align-items: center;
+  text-align: left;
   color: white;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.4;
+  font-size: 16px;
+  overflow: auto;
+  padding-right: 15px;
+  max-height: 700px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  margin-left: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 
 .imgBox {
-  width: 50%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 30px;
+  flex-direction: column;
+  margin-right: 20px;
 }
 
 .imgBox img {
   border: 2px solid white;
   border-radius: 12px;
+}
+
+#imgCarroselClass {
+  width: 100px;
 }
 
 .tituloBoxes {
@@ -282,7 +316,7 @@ body {
 }
 
 #theo {
-  background: url(../assets/imgs/personagens/theo.png);
+  background: url(../assets/imgs/personagens/theo.gif);
   background-size: cover;
 }
 
@@ -350,4 +384,28 @@ body {
 .oshiroFundo {
   background: url("../assets/imgs/textBox/oshiro.png");
   background-size: 100% 100%;
+}
+
+.tocandoAgora {
+  margin-top: 20px;
+  display: flex;
+  border: 2px solid white;
+  height: 100px;
+  width: 300px;
+  border-radius: 12px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.nomeMusica {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.autor {
+  font-family: "Renogare";
+  margin-top: 10px;
 }

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <audio autoplay loop src="./assets/song/indexSong.mp3"></audio>
+
 
   <!--Header-->
 
@@ -52,8 +52,6 @@
   <!--Main Page-->
   <div class="containerMain">
 
-
-
     <div class="boxes">
       <span class="tituloBoxes" style="font-size: 40px;" id="destino">E a escalada começa...</span>
       <div class="box">
@@ -62,36 +60,86 @@
         <div class="titleBox">
           <span id="titulo" class="fontChapters">Introdução</span>
           <div class="textBox">
-            <p id="conteudoCarrosel">a</p>
+            <p id="conteudoCarrosel" class="textoCarroselClass">
+              Madeline ouviu falar sobre a Montanha Celeste, um lugar cercado de mistério e famoso por transformar a
+              vida de quem tem coragem de subir. Logo na base da montanha, quase é atingida por um desabamento de
+              pedras. Ela segue até encontrar uma velhinha que mora ali há anos e parece conhecer cada detalhe daquele
+              lugar estranho.<br><br>
+              Curiosa, Madeline começa a perguntar sobre o caminho e acaba reclamando do desabamento. A velhinha, com um
+              jeito sarcastico e provocador, apenas ri e responde: <br><br>
+              <i>– “Se a minha ‘entrada’ quase te derrubou, a Montanha pode ser demais para você.”</i> <br><br> <i> -
+                Madeline: “Bem, se uma velha bruxa como você pode sobreviver aqui, acho que eu estarei bem.”</i> <br>
+              <br>
+              <i> - Velhinha: “Mas você deveria saber: a Montanha Celeste é um lugar estranho. Você pode ver coisas.
+                Coisas para as quais você não está pronta para ver.”</i> <br> <br> <i>- Madeline: “Você deveria procurar
+                ajuda, senhora.”</i> <br> <br>
+              Com raiva da "ignorancia" da velhinha Madeline se emburra e vai em direção a montanha.
+            </p>
+
           </div>
         </div>
         <div class="imgBox">
-          <img class="img_Carrosel" id="imagemCarrosel" alt="Imagem do Capítulo Atual de Celeste"
-            src="./assets/imgs/chapters/epilogue.gif" />
+          <img style="display: none;" class=" img_Carrosel" id="imagemCarrosel"
+            alt="Imagem do Capítulo Atual de Celeste" />
+          <video style="border: 2px solid white; border-radius: 12px;" loop autoplay muted class="img_Carrosel"
+            id="videoCarrosel">
+            <source src="./assets/imgs/chapters/epilogue.mp4">
+          </video>
+          <div style="display: none;" class="tocandoAgora" id="caixaMusica">
+            <div class="nomeMusica"> <br> Tocando agora... <br> <br> <span style="font-size: 10px;"
+                id="musicaNome">...</span> <br> <br>
+              <span class="autor">by
+                Lena Raine (Celeste
+                OST)</span>
+              <audio id="tocarMusica" autoplay loop>
+                <source src="./assets/song/indexSong.mp3" </audio>
+            </div>
+          </div>
         </div>
         <img width="70px" height="60px" onclick="carroselIr()" src="./assets/imgs/seta-direita.png" />
       </div>
 
       <span class="tituloBoxes">O que torna Celeste especial?</span </div>
-      <div class=" box">
+      <div class="box2" style="height: 700px; width: 1500px;">
         <div class="textBox">
-          <p></p>
+          <p style="align-self: center; width: 600px; margin-top: 20px; margin-left: 40px; font-size: 20px;">Celeste é
+            muito mais do que
+            apenas um jogo. Ele aborda diversos temas de forma sutil, sensível e surpreendentemente profunda. Madeline
+            era uma garota presa
+            em um ciclo de depressão e, para tentar quebrar esse looping, decidiu fazer algo aparentemente absurdo:
+            escalar a Montanha Celeste. Mas essa jornada é, na verdade, uma grande metáfora.
+            Madeline carregava um enorme peso interno e se odiava mais do que qualquer outra pessoa. Desse conflito
+            nasceu Badeline, a parte dela que concentra seus medos, inseguranças e autocrítica. A escalada cheia de
+            quedas, avanços, fracassos e tentativas representa o processo doloroso, mas necessário, de se conhecer e
+            se acolher. A cada subida e cada queda, Madeline aprende mais sobre si mesma. E descobre que o desafio mais
+            difícil de todos não era chegar ao topo da montanha, mas dar o primeiro passo: sair do quarto, romper o
+            looping e
+            começar, aos poucos, a melhorar, essa é a parte linda de Celeste,
+            é um jogo que trata muito além do que só uma escalada, trata sobre a vida, saúde mental e auto-descoberta.
+          </p>
         </div>
         <div class="imgBox">
-          <img class="img_Carrosel" alt="Madeline e Theo Descansando" src="./assets/imgs/chapters/text.gif" />
+          <img class="img_text" alt="Madeline e Theo Descansando" src="./assets/imgs/chapters/text.gif" />
         </div>
       </div>
 
       <span class="tituloBoxes">O que é esse projeto?</span </div>
-      <div class=" box">
+      <div class="box2">
         <div class="imgBox" style="margin-left: 50px;">
-          <img class="img_Carrosel" alt="Madeline e Badline se entendendo" src="./assets/imgs/chapters/text1.gif" />
+          <img class="img_text" alt="Madeline e Badline se entendendo" src="./assets/imgs/chapters/text1.gif" />
         </div>
         <div class="textBox">
-          <p>a</p>
+          <p style="align-self: center; width: 600px; margin-top: 40px; font-size: 22px;">Esse projeto surgiu como uma
+            tentativa de divulgar Celeste e espalhar sua mensagem, mostrar como um aparente "simpes jogo 2D" de
+            plataforma díficil, pode possuir significados e temas muito
+            profundos, então esse lugar serve como um abrigo, para aqueles que se identificam e enxergam ou enxergarão
+            em Celeste mais do que um jogo, além disso nessa
+            plataforma temos um Quiz que promove um começo no autoconhecimento e auto aceitação, tal como Celeste.
+          </p>
         </div>
       </div>
-      <span class="tituloBoxes">Personagens</span </div>
+      <span class="tituloBoxes" style="margin-bottom: 0px;">Personagens</span </div>
+      <img src="./assets/imgs/setaBaixo.png" width="75px">
       <div class=" boxPerso">
         <div class="caixaBonecos" onclick="madeline()" id="madeline"></div>
         <div class="caixaBonecos" onclick="badeline()" id="badeline"></div>
@@ -99,13 +147,11 @@
         <div class="caixaBonecos" onclick="granny()" id="oldWoman"></div>
         <div class="caixaBonecos" onclick="oshiro()" id="oshiro"></div>
       </div>
-      <!--Modal -->
-      <!-- Modal -->
       <div id="modal" class="modalBox" style="display: none">
         <div class="conteudoModal">
           <img id="personagemModal" class="iconePersonagem" src="./assets/imgs/personagens/modalBox/madeline.gif"
             alt="Personagem">
-          <p id="textoModal" class="textoDialogo">
+          <p id="textoModal" style="font-size: 20px; margin-right: 40px; text-align: justify;" class="textoDialogo">
           </p>
         </div>
       </div>
@@ -139,6 +185,11 @@
 </html>
 
 <script>
+
+  window.onload = function () {
+    tocarMusica.volume = 0.3;
+  }
+
   var contador = 0;
 
   var tituloInit = ["Introdução"];
@@ -150,41 +201,185 @@
     "Golden Ridge",
     "Templo do Espelho",
     "Reflexão",
+    "Reconciliação",
     "O Topo",
     "Núcleo",
     "Adeus",
   ];
 
-  var TextoInit = ["a"];
+  var TextoInit = [`
+              Madeline ouviu falar sobre a Montanha Celeste, um lugar cercado de mistério e famoso por transformar a
+              vida de quem tem coragem de subir. Logo na base da montanha, quase é atingida por um desabamento de
+              pedras. Ela segue até encontrar uma velhinha que mora ali há anos e parece conhecer cada detalhe daquele
+              lugar estranho.<br><br>
+              Curiosa, Madeline começa a perguntar sobre o caminho e acaba reclamando do desabamento. A velhinha, com um
+              jeito sarcastico e provocador, apenas ri e responde: <br><br>
+              <i>– “Se a minha ‘entrada’ quase te derrubou, a Montanha pode ser demais para você.”</i> <br><br> <i> -
+                Madeline: “Bem, se uma velha bruxa como você pode sobreviver aqui, acho que eu estarei bem.”</i> <br>
+              <br>
+              <i>- Velhinha: “Mas você deveria saber: a Montanha Celeste é um lugar estranho. Você pode ver coisas.
+                Coisas para as quais você não está pronta para ver.”</i> <br> <br> <i>- Madeline: “Você deveria procurar
+                ajuda, senhora.”</i> <br> <br>
+              Com raiva da "ignorancia" da velhinha Madeline se emburra e vai em direção a montanha.`];
 
-  var TextoCarrosel = [`a`, "a", "a", "a", "a", "a", "a", "a", "a"];
+  var TextoCarrosel = [`Ao começar a subir a montanha, Madeline entra em uma parte antiga e silenciosa, quase como uma memória perdida da própria Montanha Celeste. O lugar parece uma cidade abandonada que foi tomada pela neve por todos os lados, e ela percebe que aquela jornada não vai ser fácil. 
+  A cada segundo ela se sente mais pressionada, com medo e ansiedade de continuar, até que em um momento inesperado ela vê uma fumaça no ar. <br> <br>
+Indo ver de onde vinha, ela encontra Theo, um jovem excêntrico que está ali pelo mesmo motivo que ela: escalar a Montanha Celeste mas definitivamente não pelo mesmo <b>motivo interno.</b> 
+A conversa com ele traz algum conforto porem a escalada precisava continuar, e ela iria continuar sozinha. <br> <br> Então a subir um pouco mais ela encontra um tumulo, um memorial a todos que morreram escalando aquela montanha e ali perto um pequeno abrigo para a nevasca, então ela ascende uma fogueira e dorme.
+  `, `Ao acordar, Madeline se sente estranhamente deslocada como se tivesse despertado em um lugar que não deveria existir. À sua frente, algo como um templo se ergue, silencioso e imponente, algo que ela jura que não estava ali antes. Impulsionada pela curiosidade, ela entra. O interior é sombrio, e conforme explora, a inquietação só cresce.
+Mais adiante, Madeline se vê diante de um espelho. Mas esse espelho não reflete aquilo que ela reconhece como “ela mesma”: em vez disso, surge uma versão distorcida mais pálida, com traços melancólicos, como se fosse a parte sombria dela. Enquanto Madeline observa, esse reflexo se move por conta própria… caminha até o vidro, e então o quebra. O espelho estilhaça-se aos seus pés, e a versão escura corre para longe, desaparecendo em meio à penumbra. <br> <br>
+Madeline, assustada e determinada, parte em perseguição. É quando a voz da sua duplicata finalmente ecoa: <br>
+<i>- Badeline: “Você é muitas coisas querida, mas você não é uma alpinista.”</i> <br> <br>
+<i>- Madeline: “Esse é o exato motivo do porque eu preciso fazer isso.”</i> <br> <br>
+<i>- Badeline: “Você não consegue.” </i> <br> <br>
+<i>- Madeline: “Você é qual parte de mim? A Preguiçosa ou Medrosa?”</i> <br> <br>
+<i>- Badeline: "Sou a pragmática, vamos para casa juntas.” </i> <br> <br>
+E então começa uma perseguição durante ela, Madeline percebe algo inquietante: aquela Badeline não está realmente correndo atrás dela ela está apenas imitando seus movimentos, como um reflexo atrasado, um eco sombrio. Ao conseguir escapar dela, Madeline desperta ofegante ao lado da fogueira onde havia dormido. Tudo aquilo foi um sonho… ou talvez algo mais?`,
 
-  var imagemInit = ["./assets/imgs/chapters/epilogue.gif"];
+    `Continuando a escalada na montanha, uma grande avalanche começa, mas por sorte Madeline encontra algum tipo de hotel antigo. Ao entrar, ela se depara com o “Senhor Oshiro”, o proprietário daquele hotel. Ele é muito solidário e oferece o melhor quarto de graça para Madeline, pedindo apenas que ela ajude a arrumar o lugar. Porém, conforme ela anda um pouco mais, percebe que aquele hotel está completamente destruído, como se tivesse sido abandonado há décadas… mas mesmo assim Oshiro continua lá, preso àquele lugar.
+<br> <br>
+Mais adiante, Oshiro continua delegando funções e mais funções, o que começa a irritar Madeline. Ao finalmente chegar perto do quarto prometido e passar em frente a um espelho, o “outro eu” de Madeline aparece e começa a falar mal do hotel, dizendo que ele não tem nada demais e ainda xinga Oshiro. Isso deixa ele extremamente irritado e inicia uma perseguição caótica pelo hotel.
+<br> <br>
+Depois de muito esforço, Madeline consegue acalmar Oshiro e mostrar para ele o quanto está preso ali, 
+como ele precisa seguir em frente e não viver preso ao passado. Isso faz com que ele finalmente entenda e se afaste, desaparecendo aos poucos. 
+Com a situação resolvida, Madeline respira fundo e segue em frente com sua escalada.`,
+
+    `Seguindo mais em frente, ela encontra aquela velhinha novamente, que de alguma forma tem uma casa ali em cima também. Ela comenta como Oshiro é uma alma perdida presa ao passado e, de forma debochada, ri e agradece por Madeline ter ajudado a libertar ele. Madeline comenta sobre as visões e a outra Madeline, e a velhinha responde rindo, daquele jeito provocador:
+<br> <br> <i>- Da forma que vejo, a Montanha não pode trazer nada que já não esteja dentro de você. Talvez já seja hora de desistir… eu conheço um atalho.</i> <br> 
+<br> Madeline, evidentemente, se nega, e então ela fala:
+<br> <br> <i>- Às vezes você tem que saber a diferença entre persistência e teimosia. Você me lembra eu quando era mais jovem.</i>
+<br> <br> A garota ignora e segue em frente. Ao escalar mais, ela encontra um teleférico velho, que é a única forma de continuar, e ali ela encontra Theo novamente. Ambos decidem subir juntos.
+<br> Ao começar a subir, Madeline sente alguns tremores e entra em pânico. Ela começa a ter uma crise de pânico ali mesmo, com medo de ficar presa, e acaba culpando Theo por ter subido no teleférico. Ele ignora a culpa, e mais preocupado com ela, diz que vai ensinar uma técnica que aprendeu com o avô:
+<br> <br> <i>- Imagine uma folha. Tente fazer essa folha voar com sua respiração… vai se acalmando aos poucos.</i>
+<br> <br> Com isso, ele consegue acalmar Madeline e, quando o teleférico finalmente chega ao destino, eles continuam a escalada juntos agora.`,
+
+    `Ao sair do teleférico, Madeline encontra um templo antigo cravado na montanha. Theo aparece encantado e quer explorar, Madeline, ainda tensa, pede cautela, mas acaba seguindo.
+No interior, o ar é pesado e silencioso. Madeline acha o celular de Theo jogado no chão, bem em frente a um espelho com um símbolo de olho. O estômago dela aperta, ela pega o celular e continua.
+Mais adiante, Theo aparece preso dentro de um espelho gigante. Ele diz que estava tentando tirar uma selfie e apagou, tenta descrever o outro lado, mas é puxado para longe antes de falar mais. Madeline chama por ele, sem resposta, e segue sozinha.
+Em seguida ela puxa uma cortina que cobre um espelho enorme e é sugada para dentro. Acorda num labirinto de espinhos e raízes que parecem nascer dos seus piores pensamentos. Badeline aparece, voz cortante: <br> <br>
+<i>- Madeline: "Às vezes eu não sei mais o que está acontecendo. Eu olho no espelho e não sei quem estou vendo. Ou quem está me olhando."</i><br><br>
+<i>- Badeline: "Isso é o que eu te avisei."</i><br><br>
+<i>- Badeline: "Eu não estou no controle aqui. Você está."</i> <br> <br>
+Madeline encontra Theo preso num cristal atrás de espinhos. Ela consegue libertá-lo parcialmente, mas não quebra todo o cristal precisa carregá-lo. Carregando Theo, algumas portas só se abrem com ele, um trocadilho que a faz rir por nervoso.
+No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que se parte, libertando Theo do cristal. Eles escapam do templo, Madeline entende que o lugar amplifica tudo que ela tenta esconder dentro de si.
+      `,
+
+    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> Madeline e Theo param para descansar ao lado de uma fogueira, o calor suave iluminando as pedras e afastando um pouco do frio da noite. Depois de tudo que aconteceu no templo, ela finalmente reúne coragem e conta a ele sobre a figura que encontrou aquela parte dela que escapou do espelho e agora a persegue pela montanha. Ela explica que aquela versão é composta de tudo aquilo que ela não tem orgulho, tudo que tenta esconder ou ignorar, e que a montanha parece ter dado um corpo para isso.
+  <br><br> Theo, paciente como sempre, escuta cada palavra. Ele conta que Madeline lembra muito a irmã dele, Alex, alguém que também vive se desafiando e que carrega problemas parecidos. Madeline respira fundo antes de continuar. Ela fala sobre sua <b>depressão, sua ansiedade, coisas que raramente admite em voz alta.</b> Ninguém realmente sabe disso além de sua mãe. Subir a montanha se tornou uma forma de tentar provar algo para si mesma, de conquistar algo grande pela primeira vez.
+  <br><br> A conversa que deveria ser estranha se transforma em algo leve, acolhedor. No fim, decidem tirar uma selfie para marcar aquela noite, um pequeno registro antes de dormirem. Pela primeira vez em muito tempo, Madeline adormece sentindo que não está totalmente sozinha.
+  <br><br> Mas no sonho, tudo muda. Ela percebe que não consegue simplesmente fugir dos próprios medos. Ela precisa lidar com eles. E, acreditando tomar a decisão certa, decide libertar aquela parte dela.  <br> <br> <i>- Madeline: "Eu finalmente entendo, você não é meu reflexo de verdade, você é tudo aquilo que eu preciso jogar fora, você é cruel, paranoica e manipuladora, eu não preciso de você mais, estou te libertando."</i> <br> <br>. 
+  Ao sentir que Madeline quer abandonar ela, a mesma se enfurece. <br> <br> <i>- Badeline: "Você acha que pode se livrar de mim?, você é tão, tão, <b>ESTÚPIDA</b>"</i> <br> <br> 
+  Assustada, Madeline tenta se acalmar usando a técnica da pena que Theo ensinou, concentrando-se, respirando, tentando puxar seu medo de volta para um lugar onde pudesse controlá-lo. Mas, antes que consiga, Badeline aparece, <b>corta a pena ao meio e a lança no vazio.</b>
+  <br><br> O chão desaparece. A queda é longa, silenciosa, interminável, e então ela se encontra abaixo da base da montanha, caida em um lago de gelo, mais abaixo do que quando ela começou a escalar.
+`,
+
+    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> A queda deixa Madeline cansada e sem forças. A caverna de cristal, fria e silenciosa, parece zombar do quanto ela estava perto do topo. Tudo o que ela consegue pensar é que Badeline a derrubou… e que talvez ela tivesse razão sobre não serem capazes de subir.
+  <br><br>
+  Caminhando sem direção, Madeline encontra a Velha, que a observa como se já esperasse por aquilo, elas conversam: <br> <br>
+  <i> - Madeline: "É o fim, eu cai, aquela parte de mim estava de mim estava certa, eu não consigo escalar."</i> <br> <br>
+  <i> - Velha: "Você vai superar isso, mas para ser honesta eu achei que você conseguiria."</i> <br> <br>
+  <i> - Madeline: "O que me torna tão especial?"</i> <br> <br>
+  <i> - Velha: "Eu não vi alguém com tanta raiva de sí mesmo, eu achei que você iria subir apenas para se provar ao contrario"</i> - Exclama rindo <br><br>
+  Madeline fica com raiva e então a Velha prossegue: <br>
+  <i> - Velha: "Você já tentou conversar com ela? Talvez ela só esteja com medo, assustada" <br> <br>
+  Madeline percebe que nunca tentou. Nunca olhou para Badeline como alguém assustada só como um obstáculo. Com isso em mente, ela passa a seguir o rastro daquela sombra roxa através da caverna.
+  <br><br> Quando finalmente encontra Badeline, ela tenta se desculpar. Conta que não queria abandonar ela, que estava com medo e achou que libertar ela seria o certo. Badeline não acredita. A mágoa explode e um confronto começa, cada ataque sendo um reflexo dos próprios pensamentos de Madeline se chocando contra ela.
+  <br><br> Depois de tanta fuga e resistência, as duas acabam paradas, exaustas. Madeline então fala o que nunca teve coragem: que elas precisam uma da outra. Que, se quiserem sair daquele lugar e chegar ao topo terão que trabalhar juntas.
+  <br><br> Pela primeira vez, Badeline hesita. Ela não se desculpa, não sorri… mas escuta. E isso é o suficiente para que as duas se aproximem, até finalmente se unirem em algo novo, mais forte. Madeline sente uma energia percorrer seu corpo ela estava completa finalmente em, um novo fôlego. Uma versão dela mesma que não tenta apagar seus medos, mas caminhar com eles.
+  <br><br>
+  <i> - Madeline Completa: "Vamos fazer isso Juntas." <br> <br>
+  Com esse novo impulso, Madeline escala de volta, encontrando a Velha e Theo, que correram atrás dela quando perceberam sua queda. Badeline, ainda insegura, duvida que consigam retomar o caminho depois de caírem tanto. Mas Madeline olha para o paredão acima delas e responde, firme:
+  <br><br> <i>- “A gente tenta de novo. Juntas.”</i>
+  <br><br> Antes de subir, ela deixa sua mochila com Theo um peso a menos, literal e emocional e encara a montanha mais uma vez. `,
+
+    `
+  Agora unidas, Madeline e Badeline retornam ao ponto onde tudo parecia ter desmoronado. A montanha continua enorme, imponente, mas pela primeira vez, Madeline sente que não está enfrentando aquilo sozinha. A nova energia que corre pelo corpo dela torna cada movimento mais leve e cada desafio, possível.
+  <br><br> O caminho é difícil, mas diferente. Obstáculos que antes pareciam agressivos agora parecem responder à determinação delas. Badeline, antes apenas crítica, começa a orientar Madeline com calma, com ambas se guiando por zonas arriscadas, enquanto Madeline assume o ritmo, firme, confiante.
+  <br><br> Durante a escalada, pequenos flashes do passado surgem momentos de ansiedade, de culpa, de fracasso <b>mas agora elas enfrentam aquilo juntas. Madeline finalmente entende que não precisava destruir sua outra metade. Precisava aceitá-la.</b> 
+  <br><br> Em alguns momentos, Badeline hesita, lembrando do quão longe estão do topo. Mas Madeline responde com uma calma que nunca teve:
+  <br><br> <i>- “Eu sei. Mas a gente já caiu uma vez. E levantou. Agora vamos até o fim.”</i>
+  <br><br> <b>Ela segue, porque pela primeira vez, ela quer aquilo.</b> O ar fica mais claro conforme se aproximam da camada final de nuvens. E ali, depois de todo o peso, é como se a montanha começasse a abrir espaço para elas.
+  <br> Quando atravessam a última corrente de vento e o céu se expande ao redor delas, Madeline e Badeline param por um instante. elas chegaram no topo, ou melhor, ela chegou no topo, ela enfrentou e conseguiu escalar <b>a Montanha Celeste.</b>`,
+
+    `
+  Um ano se passou desde que Madeline conquistou o topo da Montanha Celeste. De repente, o telefone toca. Do outro lado, a Velhinha avisa sobre uma caverna instável que descobriu na montanha, algo que poderia conter algo interessante no Núcleo da Montanha Celeste. Sem hesitar, Madeline parte imediatamente.
+  <br><br> Agora, após toda a sua jornada, ela se sente completa consigo mesma. A presença de Badeline, novamente ao seu lado, é natural, como se sempre tivesse sido assim. Aquilo tudo não era grande, mas havia um toque nostálgico que aquecia seu coração. <br> <br>
+  Ela enfrenta desafios que antes seriam impossíveis, e finalmente chega ao coração do Núcleo. Uma luz intensa pulsa, cheia de energia e calma ao mesmo tempo. Madeline toca o cristal e sente tudo que passou medo, coragem, fracasso e superação e percebe que, agora está verdadeiramente em casa.
+  <br><br> Após conquistar o Núcleo, Madeline olha para a Montanha Celeste, respira fundo e agradece em silêncio por tudo que aprendeu ali. Cada queda, cada corrida, cada desafio e cada ajuda recebida se transformaram em lições valiosas. Com um último aceno, ela inicia o caminho de volta para casa, carregando consigo não apenas as lembranças da montanha, mas também a certeza de que está completa, pronta para finalmente viver.
+`,
+
+    `
+  Algum tempo depois, Madeline recebe uma carta inesperada da Velhinha que depois de tanto tempo de intimidade se refere como Vovó. Sem hesitar, ela decide ir até a Montanha Celeste mais uma vez. Mas ao chegar, encontra algo que já suspeitava, mas se recusava a acreditar: o túmulo da Velhinha, A hora de todos chega, e nada pode mudar isso.
+  <br><br> A perda daquela que a ajudou, que a salvou de sua depressão e de sua própria escuridão, é incrivelmente dolorosa. Madeline sente o peso esmagador do luto e, pela primeira vez desde que começou a escalada, se sente realmente quebrada.
+  <br><br> Badeline, percebendo a profundidade da dor de Madeline, tenta falar com ela, mas é realista sabe que a morte é definitiva. Madeline, por outro lado, se recusa a aceitar a perda, a negar a realidade, e essa diferença provoca um conflito intenso entre elas. Palavras duras são trocadas, acusações silenciosas preenchem o espaço e então, Badeline e Madeline se separam devido ao luto.
+  <br><br> Madeline se isola, incapaz de lidar com a ausência da Vovo, enquanto Badeline observa, frustrada com a teimosia e a recusa de Madeline em aceitar o inevitável. O ambiente da montanha reflete a turbulência interna de Madeline: o vento uiva, a neve cai pesada e cada passo parece mais difícil do que o anterior.
+  <br><br> Cada lembrança da velhinha desperta memórias de apoio, risadas, conselhos e pequenas palavras de encorajamento que agora parecem distantes e intangíveis. Madeline sente o vazio, mas também a necessidade de continuar, mesmo que sozinha.
+`
+
+  ];
+
+  var textoOcultoLista = [`>`]
+
+  var imagemInit = ["./assets/imgs/chapters/epilogue.mp4"];
 
   var ImagemCarrosel = [
-    "./assets/imgs/chapters/Chapter1.png",
+    "./assets/imgs/chapters/Chapter1.gif",
     "./assets/imgs/chapters/Chapter2.gif",
-    "./assets/imgs/chapters/Chapter3.png",
-    "./assets/imgs/chapters/Chapter4.png",
-    "./assets/imgs/chapters/Chapter5.png",
-    "./assets/imgs/chapters/Chapter6.png",
-    "./assets/imgs/chapters/Chapter7.png",
-    "./assets/imgs/chapters/Chapter8.png",
-    "./assets/imgs/chapters/Chapter9.png",
+    "./assets/imgs/chapters/Chapter3.gif",
+    "./assets/imgs/chapters/Chapter4.mp4",
+    "./assets/imgs/chapters/Chapter5.mp4",
+    "./assets/imgs/chapters/Chapter6.mp4",
+    "./assets/imgs/chapters/Chapter65.mp4",
+    "./assets/imgs/chapters/Chapter7.mp4",
+    "./assets/imgs/chapters/Chapter8.mp4",
+    "./assets/imgs/chapters/Chapter9.mp4",
   ];
+
+  var SongInit = ["./assets/song/indexSong.mp3"];
+
+  var MúsicaCarrosel = [
+    "./assets/song/Chapter1.mp3",
+    "./assets/song/Chapter2.mp3",
+    "./assets/song/Chapter3.mp3",
+    "./assets/song/Chapter4.mp3",
+    "./assets/song/Chapter5.mp3",
+    "./assets/song/Chapter6.mp3",
+    "./assets/song/Chapter65.mp3",
+    "./assets/song/Chapter7.mp3",
+    "./assets/song/Chapter8.mp3",
+    "./assets/song/Chapter9.mp3",
+  ]
+
+  var MusicaInit = [
+    "Little Goth"
+  ]
+
+  var MusicaNome = [
+    "First Steps",
+    "Ressurections",
+    "Spirit of Hospitality",
+    "Golden",
+    "Mirror Temple",
+    "Anxiety",
+    "Reflection",
+    "My Dearest Friends",
+    "Heart of the Mountain",
+    "The Woman and the Bird",
+  ]
 
   function carroselVoltar() {
     var conteudo = document.getElementById(`conteudoCarrosel`);
     var imagem = document.getElementById(`imagemCarrosel`);
     var titulo = document.getElementById(`titulo`);
+    var audio = document.getElementById(`tocarMusica`);
 
-    var checar = (contador - 1 == 0)
+    var checar = (contador == 0)
 
 
     for (var index = 0; index < 1; index++) {
 
       if (contador == 0) {
-        contador = 8;
+        contador = 10;
       } else {
         contador--;
       }
@@ -192,16 +387,38 @@
       var atualTexto = TextoCarrosel[contador];
       var atualImagem = ImagemCarrosel[contador];
       var atualTitulo = TituloCarrosel[contador];
+      var atualMusica = MúsicaCarrosel[contador];
+      var atualMusicaNome = MusicaNome[contador];
+
+      if (contador == 3 || contador == 4 || contador == 5 || contador == 6 || contador == 7 || contador == 8 || contador == 9) {
+        videoCarrosel.src = atualImagem;
+        imagemCarrosel.style.display = 'none';
+        videoCarrosel.style.display = 'block';
+      }
+      else {
+        imagem.src = atualImagem;
+        imagemCarrosel.style.display = 'block';
+        videoCarrosel.style.display = 'none';
+
+      }
 
       conteudo.innerHTML = atualTexto;
-      imagem.src = atualImagem;
       titulo.innerHTML = atualTitulo;
+      audio.src = atualMusica;
+      musicaNome.innerHTML = atualMusicaNome;
     }
 
     if (checar) {
+      imagemCarrosel.style.display = 'none';
+      videoCarrosel.style.display = 'block';
+
       conteudo.innerHTML = TextoInit[0];
-      imagem.src = imagemInit[0];
+      videoCarrosel.src = imagemInit[0];
       titulo.innerHTML = tituloInit[0];
+      audio.src = SongInit[0];
+      caixaMusica.style.display = 'block';
+      musicaNome.innerHTML = MusicaInit;
+      caixaMusica.style.display = 'block';
     }
   }
 
@@ -209,25 +426,53 @@
     var conteudo = document.getElementById(`conteudoCarrosel`);
     var imagem = document.getElementById(`imagemCarrosel`);
     var titulo = document.getElementById(`titulo`);
+    var audio = document.getElementById(`tocarMusica`);
+
+
 
     for (var index = 0; index < 1; index++) {
       var atualTexto = TextoCarrosel[contador];
       var atualImagem = ImagemCarrosel[contador];
       var atualTitulo = TituloCarrosel[contador];
+      var atualMusica = MúsicaCarrosel[contador];
+      var atualMusicaNome = MusicaNome[contador];
+
+
+
+
+      if (contador == 3 || contador == 4 || contador == 5 || contador == 6 || contador == 7 || contador == 8 || contador == 9) {
+        videoCarrosel.src = atualImagem;
+        imagemCarrosel.style.display = 'none';
+        videoCarrosel.style.display = 'block';
+      }
+      else {
+        imagem.src = atualImagem;
+        imagemCarrosel.style.display = 'block';
+        videoCarrosel.style.display = 'none';
+
+      }
 
       conteudo.innerHTML = atualTexto;
-      imagem.src = atualImagem;
       titulo.innerHTML = atualTitulo;
+      audio.src = atualMusica;
+      musicaNome.innerHTML = atualMusicaNome;
+      caixaMusica.style.display = 'block';
 
       contador++;
     }
 
-    if (contador == 10) {
+    if (contador == 11) {
       contador = 0;
 
+      imagemCarrosel.style.display = 'none';
+      videoCarrosel.style.display = 'block';
+
       conteudo.innerHTML = TextoInit[0];
-      imagem.src = imagemInit[0];
+      videoCarrosel.src = imagemInit[0];
       titulo.innerHTML = tituloInit[0];
+      audio.src = SongInit[0];
+      caixaMusica.style.display = 'block';
+      musicaNome.innerHTML = MusicaInit;
     }
   }
 
@@ -240,7 +485,8 @@
     personagemModal.src = "./assets/imgs/personagens/modalBox/madeline.gif";
     modal.className = 'modalBox';
     modal.classList.add(`madelineFundo`);
-    texto.innerHTML = `AAAAAAAA!!`
+    texto.innerHTML = `Madeline é uma jovem de 21 anos que carrega um peso invisível: lida diariamente com depressão, ansiedade, crises de pânico e questionamentos sobre sua própria identidade. Ela enfrenta uma batalha constante consigo mesma, tentando entender quem realmente é e como lidar com seus medos.
+    Ela decidiu subir a Montanha Celeste para fugir do ciclo da depressão e esperava encontrar alguma resposta lá.`
     modal.style.display = "block"
   }
 
@@ -253,7 +499,9 @@
     personagemModal.src = "./assets/imgs/personagens/modalBox/badeline.gif";
     modal.className = 'modalBox';
     modal.classList.add(`badelineFundo`);
-    texto.innerHTML = `NÃO!!!`;
+    texto.innerHTML = `Badeline nada mais é do que uma parte de Madeline que se manifestou fisicamente pela Montanha Celeste. 
+    Ela representa tudo o que Madeline deseja esconder sobre si mesma: um lado arrogante, chato e cruel, mas que, no fundo, 
+    é apenas uma parte assustada, com muito medo de se machucar e de falhar. Por isso, se esconde atrás dessa máscara, mas, no final, faz parte de Madeline.`;
     modal.style.display = "block";
   }
 
@@ -266,7 +514,9 @@
     personagemModal.src = "./assets/imgs/personagens/modalBox/theo.gif";
     modal.className = 'modalBox';
     modal.classList.add(`theoFundo`);
-    texto.innerHTML = `AAAAAAAAAAAA!!!`;
+    texto.innerHTML = `Theo é um jovem brasileiro de 22 anos, apaixonado por fotografia e com o sonho de se tornar um fotógrafo profissional. 
+    Calmo, observador e criativo, ele busca enxergar o mundo de uma perspectiva única, capturando momentos e emoções através de suas lentes. Decidido a explorar novas paisagens e experiências, Theo decide escalar a Montanha Celeste, 
+    motivado inicialmente pelo desejo de tirar fotos incríveis para seu Instagram. `;
     modal.style.display = "block";
   }
 
@@ -279,7 +529,9 @@
     personagemModal.src = "./assets/imgs/personagens/modalBox/granny.png";
     modal.className = 'modalBox';
     modal.classList.add(`grannyFundo`);
-    texto.innerHTML = `HAHAHAHHAHAHAHAHAH!!!`;
+    texto.innerHTML = `Velhinha, velha ou Celia, é uma antiga alpinista que, em sua juventude, já escalou a Montanha Celeste. 
+    Experiente e sábia, ela conhece os perigos, os caminhos escondidos e os segredos da montanha melhor do que quase qualquer outro ela decidiu permanecer na montanha,
+    para ela, a Montanha Celeste não é apenas um obstáculo físico, mas um lugar cheio de mistérios e lições sobre coragem, perseverança e autoconhecimento. `;
     modal.style.display = "block";
   }
 
@@ -292,7 +544,8 @@
     personagemModal.src = "./assets/imgs/personagens/modalBox/oshiro.gif";
     modal.className = 'modalBox';
     modal.classList.add(`oshiroFundo`);
-    texto.innerHTML = `HAHAHAHHAHAHAHAHAH!!!`;
+    texto.innerHTML = `Oshiro é uma alma perdida. Em vida, foi o proprietário do Grand Hotel Celeste, um lugar que já foi grandioso antes de cair no abandono causado por seu perfeccionismo extremo. Quando precisou fechar, Oshiro não suportou o fracasso e permaneceu ali até seus últimos dias.
+    Mesmo após morrer, ele se tornou um fantasma obcecado, preso às mesmas inseguranças e ao desejo desesperado de manter o hotel impecável a mesma obsessão que o destruiu em vida.`;
     modal.style.display = "block";
   }
 
