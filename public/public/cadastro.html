@@ -49,15 +49,15 @@
             <div class="cima">
               <div class="um">
                 <p class="paragrafo">Nome: </p>
-                <input type="text" placeholder="Madeline" id="nome_input">
+                <input type="text" placeholder="Madeline" id="nome_input" maxlength="50">
                 <p class="paragrafo"">Email: </p>
-              <input type=" text" placeholder="email@email.com" id="email_input">
+              <input type=" text" placeholder="email@email.com" id="email_input" maxlength="50">
               </div>
               <div class="dois">
                 <p class="paragrafo"">Senha:</p>
-              <input type=" text" placeholder="**********" id="senha_input">
+              <input type=" text" placeholder="**********" id="senha_input" maxlength="50">
                 <p class="paragrafo"">Confirme sua senha:</p>
-              <input type=" text" placeholder="**********" id="confirmacao_senha_input">
+              <input type=" text" placeholder="**********" id="confirmacao_senha_input" maxlength="50">
               </div>
             </div>
           </div>
@@ -104,15 +104,10 @@
 
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-
-
   function cadastrar() {
 
     aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
@@ -123,24 +118,96 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
-    )
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = `Algum campo está em branco, por favor inserir valor válido.`;
+      finalizarAguardar();
+      setInterval(sumirMensagem, 5000);
+      return false;
+    } else {
+      var emailSeguro = 0;
+      var emailErrado = 0;
+      var tamanhoEmail = emailVar.length;
+      var arroba = 0;
 
+      for (var indexEmail = 0; indexEmail < tamanhoEmail; indexEmail++) {
+        var atualEmail = emailVar[indexEmail];
 
-      // Verificando se há algum campo em branco
-      if (
-        nomeVar == "" ||
-        emailVar == "" ||
-        senhaVar == "" ||
-        confirmacaoSenhaVar == ""
-      ) {
+        if (atualEmail == '@') {
+          emailSeguro++;
+          arroba++;
+        }
+
+        if (arroba > 1) {
+          emailErrado++;
+        }
+      }
+
+      if (tamanhoEmail >= 4 && emailVar[tamanhoEmail - 4] == '.' && emailVar[tamanhoEmail - 3] == 'c' &&
+        emailVar[tamanhoEmail - 2] == 'o' && emailVar[tamanhoEmail - 1] == 'm') {
+
+        emailSeguro++;
+
+      }
+
+      if (tamanhoEmail >= 8) {
+        emailSeguro++;
+      }
+
+      if (emailSeguro < 3 && emailErrado == 0) {
         cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Algum campo está em branco, por favor inserir valor válido.`;
+        mensagem_erro.innerHTML = `O Email está na formatação errada, por favor corrija para seguir em frente.`;
         finalizarAguardar();
         setInterval(sumirMensagem, 5000);
         return false;
-      } else {
-        setInterval(sumirMensagem, 5000);
       }
+
+      var senhaSegura = 0;
+      var tamanhoSenha = senhaVar.length;
+      var caracEspecial = "!@#$%&*()-_=+[]{};:'\",.<>/?\\|`~"
+      var letraEspecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      var numero = '1234567890'
+
+      var temLetra = false;
+      var temNumero = false;
+      var temEspecial = false;
+
+      for (var indexSenha = 0; indexSenha < tamanhoSenha; indexSenha++) {
+        var atualSenha = senhaVar[indexSenha];
+
+        if (caracEspecial.includes(atualSenha))
+          temEspecial = true;
+
+        if (letraEspecial.includes(atualSenha)) {
+          temLetra = true;
+        }
+        if (numero.includes(atualSenha)) {
+          temNumero = true;
+        }
+      }
+
+      if (tamanhoSenha >= 8) {
+        senhaSegura++;
+      }
+
+      if (senhaSegura == 0 || !temLetra || !temNumero || !temEspecial) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = `Senha fraca: use 8+ caracteres com letra, número e símbolo.`;
+        finalizarAguardar();
+        setInterval(sumirMensagem, 5000);
+        return false;
+      }
+
+      if (senhaVar != confirmacaoSenhaVar) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = `As senhas não coincidem.`
+        finalizarAguardar();
+        setInterval(sumirMensagem, 5000);
+        return false;
+      }
+    }
+
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
