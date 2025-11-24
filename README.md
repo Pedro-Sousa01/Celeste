@@ -29,10 +29,10 @@
  - [X] Planejamento no trello
  - [X] Modelo Lógico
  - [X] Relacionamentos
- - [ ] Comandos SQL
+ - [X] Comandos SQL
  - [X] Algoritmos: Variáveis, Funções, Operações Matemáticas, Condicionais, Repetições, Vetores
  - [X] Utilização de uma VM Linux contendo somente o BD
- - [ ] Dashboard e Indicadores com gráficos
+ - [X] Dashboard e Indicadores com gráficos
 
 # ⚙️ Como instalar
 
