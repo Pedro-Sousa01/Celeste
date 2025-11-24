@@ -76,23 +76,24 @@ main .container {
 }
 
 main .container .modal {
-  background-color: rgba(255, 255, 255, 0.529);
+  background: linear-gradient(#1f1f45, #424c79);
   min-width: 40%;
-  height: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
   justify-content: center;
+  border: 3px solid #f9f6ee;
 }
 
 main .container .modal input {
   padding: 10px 30px;
   border-radius: 10px;
   font-size: 15px;
-  color: black;
+  color: #28123c;
   margin-left: 10px;
   margin-right: 10px;
+  border: 3px solid #1f1f45;
 }
 
 main .container .modal .inputs {
@@ -131,13 +132,14 @@ main .container .modal .botao button {
   width: 200px;
   height: 50px;
   border-radius: 12px;
-  background: linear-gradient(#311e2f, #393638);
+  background-color: #1f1f45;
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 3px solid #1f1f45;
 }
 
 main .container .modal .botao button:hover {
-  background-color: #d40b0094;
+  border: 2px solid #fff;
+  transform: scale(1.1);
 }
 
 main .container .modal .msg {
@@ -145,7 +147,7 @@ main .container .modal .msg {
 }
 
 main .container .modal .msg a {
-  color: black;
+  color: white;
   border-bottom: 1px solid black;
 }
 
@@ -168,16 +170,18 @@ input {
 }
 
 .paragrafo {
-  color: #28123c;
+  color: #f9f6ee;
   margin-bottom: 0px;
   margin-right: 10px;
 }
 
 .alerta_erro {
+  flex-direction: row;
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
   height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .card_erro {
   display: none;
@@ -188,17 +192,10 @@ input {
   position: fixed;
   border-radius: 4px;
   padding: 10px;
-  margin-right: 10%;
   border-radius: 12px;
-  position: absolute;
-}
-
-#alerta_erroCard {
-  margin-bottom: 500px;
-}
-
-#cardErro {
-  margin-left: 575px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .card_erro #mensagem_erro {

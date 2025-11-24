@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,7 @@
   <title>Celeste | Cadastro</title>
   <link rel="stylesheet" href="./css/cadastro_login.css">
   <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="icon" href="./assets/icon/favicon2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -20,7 +21,7 @@
       <img alt="Morango" src="./assets/imgs/navbar.gif" width="150px" />
       <ul class="navbar">
         <li>
-          <a href="index.html">Mountain</a>
+          <a href="index.html">Home</a>
         </li>
         <li>
           <a href="login.html">Login</a>
@@ -34,30 +35,31 @@
 
 
   <main>
-    <div class="alerta_erro" id="alerta_erroCard">
-      <div class="card_erro" style="width: 350px; height: 50px; margin-bottom: 25px;" id="cardErro">
+    <div class="rgbaBackground">
+      <div class="alerta_erro" id="alerta_erroCard"">
+        <div style=" width: 400px; height: 50px;" id="cardErro" class="card_erro">
         <span id="mensagem_erro"></span>
       </div>
     </div>
     <div class="login">
-      <div class="container" style="width: 1500px;">
-        <div class="modal">
-          <div class="bannerTitle" style="font-size: 35px; color: #28123C;">
+      <div class="container">
+        <div class="modal" style="width: 80vh;">
+          <div class="bannerTitle" style="font-size: 35px; color: #f9f6ee;">
             Cadastro
           </div>
           <div class="inputs">
             <div class="cima">
               <div class="um">
-                <p class="paragrafo">Nome: </p>
+                <p class="paragrafo"><b>Nome:</b></p>
                 <input type="text" placeholder="Madeline" id="nome_input" maxlength="50">
-                <p class="paragrafo"">Email: </p>
+                <p class="paragrafo""><b>Email:</b></p>
               <input type=" text" placeholder="email@email.com" id="email_input" maxlength="50">
               </div>
               <div class="dois">
-                <p class="paragrafo"">Senha:</p>
-              <input type=" text" placeholder="**********" id="senha_input" maxlength="50">
-                <p class="paragrafo"">Confirme sua senha:</p>
-              <input type=" text" placeholder="**********" id="confirmacao_senha_input" maxlength="50">
+                <p class="paragrafo""><b>Senha:</b></p>
+              <input placeholder=" **********" type="password" id="senha_input" maxlength="50">
+                <p class="paragrafo""><b>Confirme sua senha:</b></p>
+              <input placeholder=" **********" type="password" id="confirmacao_senha_input" maxlength="50">
               </div>
             </div>
           </div>
@@ -68,8 +70,8 @@
           <div id="div_aguardar" class="loading-div" style="display: none; margin: 10px 0px;">
             <img width="50px" height="50px" src="./assets/aguarde-pink.gif" id="loading-gif" />
           </div>
-          <div class="msg">
-            <p>Ja tem cadastro? faça <a style="color: #28123C; font-size: 12px;" href="login.html"
+          <div class="msg" style="color: #f9f6ee">
+            <p>Ja tem cadastro? faça <a style="color: #f9f6ee; font-size: 12px;" href="login.html"
                 class="bannerTitle">LOGIN</a></p>
           </div>
 
@@ -77,7 +79,8 @@
         </div>
       </div>
       <div id="div_erros_login"></div>
-
+    </div>
+    </div>
   </main>
   <div class="footer">
     <div class="containerFooter">
@@ -119,7 +122,7 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      cardErro.style.display = "block";
+      cardErro.style.display = "flex";
       mensagem_erro.innerHTML = `Algum campo está em branco, por favor inserir valor válido.`;
       finalizarAguardar();
       setInterval(sumirMensagem, 5000);
@@ -206,8 +209,6 @@
         return false;
       }
     }
-
-
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {

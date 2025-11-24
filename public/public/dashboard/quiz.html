@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Celeste | Mountain</title>
+
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel=" icon" href="../assets/icon/favicon2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="backgroundQuiz">
+        <div class="rgbaBackground">
+            <span class="tituloBoxQuiz" id="tituloPrincipalBoxes">Quem é você
+                na escalada?</span>
+
+            <div class="boxQuiz" id="boxQuizMaioral">
+                <div class="boxGraficoQuiz" id="boxGraficoQuiz" style="display: none;">
+                    <canvas class="graficoQuiz" id="dashPrincipal" style="display: none;"></canvas>
+                </div>
+                <div class="boxGraficoQuiz2" id="boxGraficoQuiz2" style="display: none" ;>
+                    <div class="kpi">
+                        <b>O personagem que você mais se parece é </b> <br> <br>
+                        <span id="kpiParecido"></span>
+                    </div>
+                    <div class="kpi">
+                        <b>Essa montanha foi escalada </b> <br> <br>
+                        <span id="kpiTotal"></span>
+                    </div>
+                </div>
+                <div class="boxGraficoQuiz2" id="boxGraficoQuiz3" style="display: none" ;>
+                    <div class="kpi">
+                        <span style="color: #B746BD" id="kpiEscaladasTotais"></span>
+                    </div>
+                    <div class="kpi">
+                        <b>O personagem que mais veio ao total foi</b> <br> <br>
+                        <span style="color: #B746BD" id="kpiPersonagemMaioral"></span><span style="color: #B746BD"
+                            ;>!</span>
+                    </div>
+                </div>
+                <div id="questoesId" class="questoes" style="margin-bottom: 10px;">
+                    <span id="perguntaAtualQuiz" class="tituloBoxes" style="font-size: 25px;"></span>
+                </div>
+
+                <div class="perguntas" id="caixaQuizBox">
+                    <span id="comecarQuiz"
+                        style="align-self: center; font-size: 50px; color: #F9F6EE; margin-left: 130px;"
+                        class="tituloBoxes">Começar a Escalada?</span>
+                    <div class="alternativas" style="display: none;" id="alternativasQuiz">
+                        <input style="height: 7%;" type="radio" value="alternativaA" id="ASelect" name="alternativa">
+                        <input style="height: 7%;" type="radio" value="alternativaB" id="BSelect" name="alternativa">
+                        <input style="height: 7%;" type="radio" value="alternativaC" id="CSelect" name="alternativa">
+                        <input style="height: 7%;" type="radio" value="alternativaD" id="DSelect" name="alternativa">
+                        <input style="height: 7%;" type="radio" value="alternativaE" id="ESelect" name="alternativa">
+                    </div>
+                    <div class="alternativasTexto" style="display: none;" id="alternativasTextoId">
+                        <span style="border-top: none;" class="alter"><b id="alterA"
+                                style="margin-left: 20px;"></b></span>
+                        <span class="alter"><b id="alterB" style="margin-left: 20px;"></b></span>
+                        <span class="alter"><b id="alterC" style="margin-left: 20px;"></b></span>
+                        <span class="alter"><b id="alterD" style="margin-left: 20px;"></b></span>
+                        <span class="alter"><b id="alterE" style="margin-left: 20px;"></b></span>
+                    </div>
+                </div>
+                <div class="buttonQuiz">
+                    <button id="quizButton" onclick="quiz()">Escalar</button>
+                </div>
+            </div>
+            <div class="botoes">
+                <div class="botoesQuizFinal">
+                    <button id="voltarHome" onclick="voltar()">Sair</button>
+                    <button id="recomecarQuiz" onclick="recomecar()">Recomeçar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!--Footer-->
+    <div class=" footer">
+        <div class="containerFooter">
+            <div class="imgBox">
+                <img width="150px" style="border: none" alt="Morango" src="../assets/imgs/footer.gif" />
+            </div>
+            <div class="footerText">
+                <span class="bannerTitle" style="font-size: 20px">Escale sua Montanha</span>
+                <p>
+                    Esse é um projeto sem fins lucrativos para aprendizado pessoal e
+                    divulgação, portanto as músicas, imagens e vídeos utilizados no site
+                    são de terceiros e estão sujeitos a remoções.
+                </p>
+                <span style="margin-bottom: 10px;">Feito com ♡ por Pedro Sousa</span>
+            </div>
+            <div class="imgBox">
+                <img width="150px" style="border: none" alt="Morango" src="../assets/imgs/footer.gif" />
+            </div>
+        </div>
+        <!--Fim Footer-->
+
+</body>
+
+<script>
+    var madeline = 0;
+    var badeline = 0;
+    var theo = 0;
+    var celia = 0;
+    var oshiro = 0;
+
+    var checarComeco = false;
+
+    var perguntaAtual = 0;
+
+    // 1 - Perguntas // 2 - Alternativa A // 3 - Alternativa B // 4 - Alternativa C // 5 - Alternativa D
+
+    var Quiz = [[
+        "Como você reage diante de um problema difícil?",
+        "Como você lida com seus próprios erros?",
+        "Como você descreve sua relação com suas próprias emoções?",
+        "Qual frase <br> mais combina com você?",
+        "Como você reage ao conhecer alguém novo?",
+        "Como você vê o seu passado?",
+        "Qual dessas atitudes parece mais “sua”?",
+    ],
+
+    ["Eu tento enfrentar mesmo com medo.", "Aceito que posso aprender com eles.", "É difícil, mas estou tentando me entender.", "“Posso estar caindo, mas vou tentar subir de novo.”", "Fico nervoso(a) e demoro para me abrir mas tento ser gentil.", "Algo confuso, mas que estou tentando entender.", "Seguir em frente mesmo quando estiver díficil."],
+    ["Eu travo e fico pensando no pior cenário.", "Me culpo demais, mesmo por coisas pequenas.", "Eu sufoco tudo para não parecer vulnerável.", "“Se eu for falhar, é melhor nem tentar.”", "Sinto desconfiança e prefiro observar de longe antes de interagir.", "Algo que me assombra e que eu queria apagar.", "Evitar riscos por medo de falhar."],
+    ["Tento ver o lado positivo e agir com calma.", "Levo na boa e sigo em frente.", "Eu aceito sentir e falar sobre elas.", "“Tudo é melhor com companhia.”", "Normal, adoro conversar e interagir.", "Como algo para aprender e seguir em frente.", "Fazer o preciso para viver o agora sem arrependimentos."],
+    ["Analiso com experiência e planejo antes de agir.", "Encaro como parte natural da vida.", "Eu me baseio nas experiências passadas para seguir em frente.", "“Experiência ensina, paciência ajuda a seguir em frente.”", "Interajo bem as vezes sou mal interpretado(a).", "Não é um reflexo do futuro mas é um ótimo guia.", "Tentar ajudar quem eu puder sempre que possível."],
+    ["Tento arrumar tudo sozinho e manter a aparência.", "Faço de tudo para esconder.", "Eu evito pensar nelas e foco em ser produtivo.", "“Odeio quando as coisas não atendem as minhas expectativas.”", "Tento impressionar.", "Um lugar onde fiquei preso sem perceber.", "Tenho dificuldade em ouvir os outros, me prendo demais em mim."]]
+
+    function quiz() {
+
+        var comecar = document.getElementById("comecarQuiz");
+        var questoes = document.getElementById("questoesId");
+        var botao = document.getElementById("quizButton");
+        var alternativas = document.getElementById("alternativasQuiz");
+        var alterTexto = document.getElementById("alternativasTextoId");
+        var caixaQuizBox = document.getElementById("caixaQuizBox");
+
+        var pergunta = document.getElementById("perguntaAtualQuiz");
+        var Aq = document.getElementById("alterA");
+        var Bq = document.getElementById("alterB");
+        var Cq = document.getElementById("alterC");
+        var Dq = document.getElementById("alterD");
+        var Eq = document.getElementById("alterE");
+
+        alterTexto.style.display = "flex";
+        comecar.style.display = "none";
+        questoes.style.display = "block";
+        alternativas.style.display = "flex";
+        caixaQuizBox.style.border = "2px solid white";
+
+
+        botao.innerHTML = "Responder";
+
+        var altA = document.getElementById("ASelect");
+        var altB = document.getElementById("BSelect");
+        var altC = document.getElementById("CSelect");
+        var altD = document.getElementById("DSelect");
+        var altE = document.getElementById("ESelect");
+
+        var validade = true;
+
+        if (checarComeco == true) {
+            if (altA.checked) {
+                madeline += 2;
+            } else if (altB.checked) {
+                badeline += 2;
+            } else if (altC.checked) {
+                theo += 2;
+            } else if (altD.checked) {
+                celia += 2;
+            } else if (altE.checked) {
+                oshiro += 2;
+            } else {
+                validade = false;
+                alert("Selecione uma opção!");
+            }
+        }
+
+        altA.checked = false;
+        altB.checked = false;
+        altC.checked = false;
+        altD.checked = false;
+        altE.checked = false;
+
+        if (validade == true) {
+            Aq.innerHTML = "1. "
+            Bq.innerHTML = "2. "
+            Cq.innerHTML = "3. "
+            Dq.innerHTML = "4. "
+            Eq.innerHTML = "5. "
+
+            for (var index = 0; index < 1; index++) {
+
+                var atualPergunta = Quiz[0][perguntaAtual];
+                var AtualA = Quiz[1][perguntaAtual];
+                var AtualB = Quiz[2][perguntaAtual];
+                var AtualC = Quiz[3][perguntaAtual];
+                var AtualD = Quiz[4][perguntaAtual];
+                var AtualE = Quiz[5][perguntaAtual];
+
+                pergunta.innerHTML = atualPergunta;
+                Aq.innerHTML += AtualA;
+                Bq.innerHTML += AtualB;
+                Cq.innerHTML += AtualC;
+                Dq.innerHTML += AtualD;
+                Eq.innerHTML += AtualE;
+
+                perguntaAtual++;
+            }
+        }
+
+        if (perguntaAtual >= 8) {
+            alterTexto.style.display = "none";
+            comecar.style.display = "block";
+            questoes.style.display = "none";
+            alternativas.style.display = "none";
+
+            comecar.innerHTML = "Checar resultados?"
+            caixaQuizBox.style.border = "none";
+
+            botao.onclick = null;
+            botao.innerHTML = "Finalizar Quiz";
+            botao.onclick = Resultado;
+        }
+
+        checarComeco = true;
+    }
+
+    function Resultado() {
+
+        var personagemParecido = "Madeline";
+        var maiorPontuacao = madeline;
+
+        if (badeline > maiorPontuacao) {
+            maiorPontuacao = badeline;
+            personagemParecido = "Badeline"
+        }
+
+        if (theo > maiorPontuacao) {
+            maiorPontuacao = theo;
+            personagemParecido = "Theo"
+        }
+
+        if (celia > maiorPontuacao) {
+            maiorPontuacao = celia;
+            personagemParecido = "Celia"
+        }
+
+        if (oshiro > maiorPontuacao) {
+            maiorPontuacao = oshiro;
+            personagemParecido = "Oshiro";
+        }
+
+        fetch("/quiz/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                madeline: madeline,
+                badeline: badeline,
+                theo: theo,
+                celia: celia,
+                oshiro: oshiro
+            }),
+        }).then(res => res.json())
+            .then(json => {
+                var fkQuiz = json.fkQuiz;
+                fetch("/quiz/cadastrarNN", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        fkUsuario: sessionStorage.ID_USUARIO,
+                        fkQuiz: fkQuiz,
+                        resultado: personagemParecido
+                    })
+                });
+            });
+
+
+        var comecar = document.getElementById("comecarQuiz");
+        var botao = document.getElementById("quizButton");
+        var tituloPrincipal = document.getElementById("tituloPrincipalBoxes");
+        var caixa = document.getElementById("caixaQuizBox");
+
+        comecar.style.display = "none";
+        caixa.style.display = "none";
+
+        tituloPrincipal.innerHTML = "Enfim, o topo.";
+
+        botao.onclick = null;
+
+        botao.innerHTML = "Seguir?";
+
+        botao.onclick = exibirGraficos;
+    }
+
+    function exibirGraficos() {
+        var graficoFinal = document.getElementById("dashPrincipal");
+        var botao = document.getElementById("quizButton");
+        var boxGrafico = document.getElementById("boxGraficoQuiz");
+        var boxGrafico2 = document.getElementById("boxGraficoQuiz2");
+        var boxGrafico3 = document.getElementById("boxGraficoQuiz3");
+        var CaixaGraficoGrande = document.getElementById("boxQuizMaioral");
+
+        var porcentagemMadeline = ((madeline / 14) * 100).toFixed();
+        var porcentagemBadeline = ((badeline / 14) * 100).toFixed();
+        var porcentagemTheo = ((theo / 14) * 100).toFixed();
+        var porcentagemCelia = ((celia / 14) * 100).toFixed();
+        var porcentagemOshiro = ((oshiro / 14) * 100).toFixed();
+
+        CaixaGraficoGrande.style.justifyContent = "center";
+        CaixaGraficoGrande.style.alignItems = "center";
+        CaixaGraficoGrande.style.flexDirection = 'row';
+
+
+
+        botao.style.display = "none";
+        graficoFinal.style.display = "block";
+        boxGrafico.style.display = "flex";
+        boxGrafico2.style.display = "flex";
+        boxGrafico3.style.display = "flex";
+
+        new Chart(graficoFinal, {
+            type: 'pie',
+            data: {
+                labels: ['Madeline', 'Badeline', 'Theo', 'Celia', 'Oshiro'],
+                datasets: [{
+                    label: 'Porcentagem de cada personagem',
+                    data: [porcentagemMadeline, porcentagemBadeline, porcentagemTheo, porcentagemCelia, porcentagemOshiro],
+                    backgroundColor: [
+                        '#ED5D75',
+                        '#B746BD',
+                        '#5CCDA9',
+                        '#588B3A',
+                        '#8BDFE3'
+                    ],
+                    borderColor: '#f9f6ee',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#f9f6ee',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var kpiParecido = document.getElementById("kpiParecido");
+        var kpiTotal = document.getElementById("kpiTotal");
+
+        fetch("/dash/listarView", {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(listarView => {
+                var kpi = listarView[0];
+                kpiParecido.innerHTML = " " + kpi.personagemMaisParecido;
+                kpiTotal.innerHTML = " " + kpi.quantidadeDeEscaladas;
+                kpiEscaladasTotais.innerHTML = " " + kpi.quantosEscalaram;
+                kpiPersonagemMaioral.innerHTML = " " + kpi.personagemMaioral;
+
+                var n1 = Number(kpi.quantidadeDeEscaladas);
+                var n2 = Number(kpi.quantosEscalaram);
+
+
+                if (n1 > 1) {
+                    kpiTotal.innerHTML += ` vezes!`
+                } else {
+                    kpiTotal.innerHTML += ` vez!`
+                }
+
+                if (n2 > 1) {
+                    kpiEscaladasTotais.innerHTML += ` Pessoas <br> <br> <b style="color: white">Já escalaram essa montanha!</b>`
+                } else {
+                    kpiEscaladasTotais.innerHTML = `Você é o(a) primeiro(a) aqui!`
+                }
+            });
+
+
+    }
+    function recomecar() {
+        window.location.reload();
+    }
+
+    function voltar() {
+        window.location = "../index.html"
+    }
+
+
+
+
+</script>

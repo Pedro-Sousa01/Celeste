@@ -28,5 +28,12 @@ CREATE Table Resultado (
 		CONSTRAINT fkUsuarioResultado
 			FOREIGN KEY(fkUsuario)
 				REFERENCES usuario(id),
-PRIMARY KEY(idResultado, fkQuiz, fkUsuario)
-);
+					PRIMARY KEY(idResultado, fkQuiz, fkUsuario)
+)
+
+CREATE VIEW vw_dashboard AS
+SELECT
+	(SELECT resultado from Resultado ORDER BY idResultado DESC LIMIT 1) as 'personagemMaisParecido',
+		(SELECT COUNT(DISTINCT (fkQuiz)) from Resultado) as 'quantidadeDeEscaladas',
+			(SELECT COUNT(DISTINCT fkUsuario) FROM Resultado WHERE (RESULTADO IN('Madeline', 'Badeline', 'Theo', 'Celia', 'Oshiro'))) as 'quantosEscalaram',
+				(SELECT resultado FROM Resultado GROUP BY resultado ORDER BY COUNT(*) DESC LIMIT 1) as 'personagemMaioral';

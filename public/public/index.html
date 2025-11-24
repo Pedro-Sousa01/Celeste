@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Celeste | Mountain</title>
+  <title>Celeste | Home</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -27,7 +27,7 @@
       <img alt="Morango" src="./assets/imgs/navbar.gif" width="150px" />
       <ul class="navbar">
         <li class="agora">
-          <a href="#">Mountain</a>
+          <a href="#">Home</a>
         </li>
         <li>
           <a href="login.html">Login</a>
@@ -54,12 +54,13 @@
 
     <div class="boxes">
       <span class="tituloBoxes" style="font-size: 40px;" id="destino">E a escalada começa...</span>
-      <div class="box">
+      <div class="boxEspec" id="fundoMudanca">
         <img width="70px" style="margin-left: 20px" height="60px" onclick="carroselVoltar()"
           src="./assets/imgs/seta-esquerda.png" />
         <div class="titleBox">
-          <span id="titulo" class="fontChapters">Introdução</span>
-          <div class="textBox">
+
+          <div class="textBoxEspec">
+            <span id="titulo" class="fontChapters">Introdução</span>
             <p id="conteudoCarrosel" class="textoCarroselClass">
               Madeline ouviu falar sobre a Montanha Celeste, um lugar cercado de mistério e famoso por transformar a
               vida de quem tem coragem de subir. Logo na base da montanha, quase é atingida por um desabamento de
@@ -86,8 +87,7 @@
             <source src="./assets/imgs/chapters/epilogue.mp4">
           </video>
           <div style="display: none;" class="tocandoAgora" id="caixaMusica">
-            <div class="nomeMusica"> <br> Tocando agora... <br> <br> <span style="font-size: 10px;"
-                id="musicaNome">...</span> <br> <br>
+            <div class="nomeMusica"> <br> Tocando agora... <br> <br> <span id="musicaNome">...</span> <br> <br>
               <span class="autor">by
                 Lena Raine (Celeste
                 OST)</span>
@@ -200,8 +200,8 @@
     "Resort Celestial",
     "Golden Ridge",
     "Templo do Espelho",
-    "Reflexão",
-    "Reconciliação",
+    `Reflexão`,
+    `Reconciliação`,
     "O Topo",
     "Núcleo",
     "Adeus",
@@ -264,7 +264,7 @@ Madeline encontra Theo preso num cristal atrás de espinhos. Ela consegue libert
 No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que se parte, libertando Theo do cristal. Eles escapam do templo, Madeline entende que o lugar amplifica tudo que ela tenta esconder dentro de si.
       `,
 
-    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> Madeline e Theo param para descansar ao lado de uma fogueira, o calor suave iluminando as pedras e afastando um pouco do frio da noite. Depois de tudo que aconteceu no templo, ela finalmente reúne coragem e conta a ele sobre a figura que encontrou aquela parte dela que escapou do espelho e agora a persegue pela montanha. Ela explica que aquela versão é composta de tudo aquilo que ela não tem orgulho, tudo que tenta esconder ou ignorar, e que a montanha parece ter dado um corpo para isso.
+    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> Madeline e Theo param para descansar ao lado de uma fogueira, o calor suave iluminando as pedras e afastando um pouco do frio da noite. Depois de tudo que aconteceu no templo, ela finalmente reúne coragem e conta a ele sobre a figura que encontrou aquela parte dela que escapou do espelho e agora a persegue pela montanha. Ela explica que aquela versão é composta de tudo aquilo que ela não tem orgulho, tudo que tenta esconder ou ignorar, e que a montanha parece ter dado um corpo para isso.
   <br><br> Theo, paciente como sempre, escuta cada palavra. Ele conta que Madeline lembra muito a irmã dele, Alex, alguém que também vive se desafiando e que carrega problemas parecidos. Madeline respira fundo antes de continuar. Ela fala sobre sua <b>depressão, sua ansiedade, coisas que raramente admite em voz alta.</b> Ninguém realmente sabe disso além de sua mãe. Subir a montanha se tornou uma forma de tentar provar algo para si mesma, de conquistar algo grande pela primeira vez.
   <br><br> A conversa que deveria ser estranha se transforma em algo leve, acolhedor. No fim, decidem tirar uma selfie para marcar aquela noite, um pequeno registro antes de dormirem. Pela primeira vez em muito tempo, Madeline adormece sentindo que não está totalmente sozinha.
   <br><br> Mas no sonho, tudo muda. Ela percebe que não consegue simplesmente fugir dos próprios medos. Ela precisa lidar com eles. E, acreditando tomar a decisão certa, decide libertar aquela parte dela.  <br> <br> <i>- Madeline: "Eu finalmente entendo, você não é meu reflexo de verdade, você é tudo aquilo que eu preciso jogar fora, você é cruel, paranoica e manipuladora, eu não preciso de você mais, estou te libertando."</i> <br> <br>. 
@@ -273,7 +273,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
   <br><br> O chão desaparece. A queda é longa, silenciosa, interminável, e então ela se encontra abaixo da base da montanha, caida em um lago de gelo, mais abaixo do que quando ela começou a escalar.
 `,
 
-    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> A queda deixa Madeline cansada e sem forças. A caverna de cristal, fria e silenciosa, parece zombar do quanto ela estava perto do topo. Tudo o que ela consegue pensar é que Badeline a derrubou… e que talvez ela tivesse razão sobre não serem capazes de subir.
+    `<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> A queda deixa Madeline cansada e sem forças. A caverna de cristal, fria e silenciosa, parece zombar do quanto ela estava perto do topo. Tudo o que ela consegue pensar é que Badeline a derrubou… e que talvez ela tivesse razão sobre não serem capazes de subir.
   <br><br>
   Caminhando sem direção, Madeline encontra a Velha, que a observa como se já esperasse por aquilo, elas conversam: <br> <br>
   <i> - Madeline: "É o fim, eu cai, aquela parte de mim estava de mim estava certa, eu não consigo escalar."</i> <br> <br>
@@ -367,6 +367,23 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
     "The Woman and the Bird",
   ]
 
+  var fundoInit = [
+    `url("./assets/imgs/backChapters/intro.png")`
+  ]
+
+  var fundos = [
+    `url("./assets/imgs/backChapters/chapter1.png")`,
+    `url("./assets/imgs/backChapters/chapter2.png")`,
+    `url("./assets/imgs/backChapters/chapter3.png")`,
+    `url("./assets/imgs/backChapters/chapter4.gif")`,
+    `url("./assets/imgs/backChapters/chapter5.png")`,
+    `url("./assets/imgs/backChapters/chapter6.png")`,
+    `url("./assets/imgs/backChapters/chapter65.png")`,
+    `url("./assets/imgs/backChapters/chapter7.png")`,
+    `url("./assets/imgs/backChapters/chapter8.png")`,
+    `url("./assets/imgs/backChapters/chapter9.png")`,
+  ]
+
   function carroselVoltar() {
     var conteudo = document.getElementById(`conteudoCarrosel`);
     var imagem = document.getElementById(`imagemCarrosel`);
@@ -389,6 +406,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       var atualTitulo = TituloCarrosel[contador];
       var atualMusica = MúsicaCarrosel[contador];
       var atualMusicaNome = MusicaNome[contador];
+      var atualFundo = fundos[contador];
 
       if (contador == 3 || contador == 4 || contador == 5 || contador == 6 || contador == 7 || contador == 8 || contador == 9) {
         videoCarrosel.src = atualImagem;
@@ -406,6 +424,8 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       titulo.innerHTML = atualTitulo;
       audio.src = atualMusica;
       musicaNome.innerHTML = atualMusicaNome;
+      fundoMudanca.style.backgroundImage = atualFundo;
+
     }
 
     if (checar) {
@@ -419,6 +439,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       caixaMusica.style.display = 'block';
       musicaNome.innerHTML = MusicaInit;
       caixaMusica.style.display = 'block';
+      fundoMudanca.style.backgroundImage = fundoInit[0];
     }
   }
 
@@ -436,9 +457,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       var atualTitulo = TituloCarrosel[contador];
       var atualMusica = MúsicaCarrosel[contador];
       var atualMusicaNome = MusicaNome[contador];
-
-
-
+      var atualFundo = fundos[contador];
 
       if (contador == 3 || contador == 4 || contador == 5 || contador == 6 || contador == 7 || contador == 8 || contador == 9) {
         videoCarrosel.src = atualImagem;
@@ -457,6 +476,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       audio.src = atualMusica;
       musicaNome.innerHTML = atualMusicaNome;
       caixaMusica.style.display = 'block';
+      fundoMudanca.style.backgroundImage = atualFundo;
 
       contador++;
     }
@@ -473,6 +493,7 @@ No fim, um grande olho bloqueia a saída. Madeline joga Theo contra o olho, que 
       audio.src = SongInit[0];
       caixaMusica.style.display = 'block';
       musicaNome.innerHTML = MusicaInit;
+      fundoMudanca.style.backgroundImage = fundoInit[0];
     }
   }
 
