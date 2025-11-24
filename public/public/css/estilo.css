@@ -254,7 +254,7 @@ body {
 }
 
 .textBoxEspec {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 95%;
   margin-right: 15px;
   height: 100%;
@@ -274,6 +274,7 @@ body {
   backdrop-filter: blur(5px);
   border-radius: 12px;
   flex-direction: column;
+  border: 1px solid white;
 }
 
 ::-webkit-scrollbar {
